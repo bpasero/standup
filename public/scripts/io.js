@@ -6,7 +6,7 @@ define([
 		'use strict';
 
 		var ioConnect = function() {
-			var socket = io.connect(window.location.hostname);
+			var socket = io.connect();
 			
 			socket.on('news', function(data) {
 				console.log(data);
