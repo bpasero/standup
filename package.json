@@ -7,6 +7,8 @@
   },
   "dependencies": {
     "express": "3.4.8",
-    "jade": "*"
+    "jade": "1.1.5",
+		"dirty": "0.9.9",
+		"socket.io": "0.9.16"
   }
 }
