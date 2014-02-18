@@ -23,8 +23,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', routes.index);
 
 // db
-db.startup(function() {
-  console.log('DB startup done');
+db.startup(function(created) {
+  if (created) {
+    console.log('Created a new database file');
+  } else {
+    console.log('Connected to existing database file');
+  }
 
   http.createServer(app).listen(app.get('port'), function() {
     console.log('Express server listening on port ' + app.get('port'));

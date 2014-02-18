@@ -11,7 +11,7 @@ var db = {
 }
 
 // DB Startup routine
-module.exports.startup = function(dblocation, callback) {
+module.exports.startup = function(callback, dblocation) {
 	dblocation = dblocation || DEFAULT_DB_LOCATION;
 	db = dirty(dblocation);
 	
@@ -28,12 +28,14 @@ module.exports.startup = function(dblocation, callback) {
 			]
 			
 			db.set('users', users);
+		} else {
+			callback(false);
 		}
 	});
 	
 	db.on('drain', function() {
 		if (!done) {
-    		callback();
+    		callback(true);
 			done = true;
 		}
   	});
