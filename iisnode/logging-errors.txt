@@ -1,0 +1,125 @@
+Tue Feb 18 2014 12:41:02 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: Cannot call method 'on' of undefined
+    at Server.<anonymous> (D:\home\site\wwwroot\app.js:40:14)
+    at Server.g (events.js:175:14)
+    at Server.EventEmitter.emit (events.js:117:20)
+    at net.js:1052:10
+    at process._tickCallback (node.js:415:13)
+Tue Feb 18 2014 12:45:24 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: Object #<Object> has no method 'configure'
+    at D:\home\site\wwwroot\app.js:35:10
+    at null.<anonymous> (D:\home\site\wwwroot\db.js:32:4)
+    at EventEmitter.emit (events.js:95:17)
+    at ReadStream._readStream.on.on.on.on.self._fdRead (D:\home\site\wwwroot\node_modules\dirty\lib\dirty\dirty.js:188:12)
+    at ReadStream.EventEmitter.emit (events.js:117:20)
+    at _stream_readable.js:920:16
+    at process._tickCallback (node.js:415:13)
+Tue Feb 18 2014 12:45:35 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: Object #<Object> has no method 'set'
+    at D:\home\site\wwwroot\app.js:35:10
+    at null.<anonymous> (D:\home\site\wwwroot\db.js:32:4)
+    at EventEmitter.emit (events.js:95:17)
+    at ReadStream._readStream.on.on.on.on.self._fdRead (D:\home\site\wwwroot\node_modules\dirty\lib\dirty\dirty.js:188:12)
+    at ReadStream.EventEmitter.emit (events.js:117:20)
+    at _stream_readable.js:920:16
+    at process._tickCallback (node.js:415:13)
+Tue Feb 18 2014 12:45:54 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: Object #<Object> has no method 'set'
+    at D:\home\site\wwwroot\app.js:38:10
+    at null.<anonymous> (D:\home\site\wwwroot\db.js:32:4)
+    at EventEmitter.emit (events.js:95:17)
+    at ReadStream._readStream.on.on.on.on.self._fdRead (D:\home\site\wwwroot\node_modules\dirty\lib\dirty\dirty.js:188:12)
+    at ReadStream.EventEmitter.emit (events.js:117:20)
+    at _stream_readable.js:920:16
+    at process._tickCallback (node.js:415:13)
+Tue Feb 18 2014 12:46:41 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: Object #<Object> has no method 'set'
+    at D:\home\site\wwwroot\app.js:38:10
+    at null.<anonymous> (D:\home\site\wwwroot\db.js:32:4)
+    at EventEmitter.emit (events.js:95:17)
+    at ReadStream._readStream.on.on.on.on.self._fdRead (D:\home\site\wwwroot\node_modules\dirty\lib\dirty\dirty.js:188:12)
+    at ReadStream.EventEmitter.emit (events.js:117:20)
+    at _stream_readable.js:920:16
+    at process._tickCallback (node.js:415:13)
+Tue Feb 18 2014 12:54:34 GMT+0000 (Coordinated Universal Time): Unaught exception: SyntaxError: Unexpected token ILLEGAL
+    at Module._compile (module.js:439:25)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (D:\Program Files (x86)\iisnode\interceptor.js:437:1)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+Tue Feb 18 2014 12:54:39 GMT+0000 (Coordinated Universal Time): Unaught exception: SyntaxError: Unexpected token ILLEGAL
+    at Module._compile (module.js:439:25)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (D:\Program Files (x86)\iisnode\interceptor.js:437:1)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+Tue Feb 18 2014 12:54:40 GMT+0000 (Coordinated Universal Time): Unaught exception: SyntaxError: Unexpected token ILLEGAL
+    at Module._compile (module.js:439:25)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (D:\Program Files (x86)\iisnode\interceptor.js:437:1)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+Tue Feb 18 2014 12:55:32 GMT+0000 (Coordinated Universal Time): Unaught exception: ReferenceError: socketio is not defined
+    at D:\home\site\wwwroot\app.js:38:11
+    at null.<anonymous> (D:\home\site\wwwroot\db.js:32:4)
+    at EventEmitter.emit (events.js:95:17)
+    at ReadStream._readStream.on.on.on.on.self._fdRead (D:\home\site\wwwroot\node_modules\dirty\lib\dirty\dirty.js:188:12)
+    at ReadStream.EventEmitter.emit (events.js:117:20)
+    at _stream_readable.js:920:16
+    at process._tickCallback (node.js:415:13)
+Tue Feb 18 2014 12:55:36 GMT+0000 (Coordinated Universal Time): Unaught exception: ReferenceError: socketio is not defined
+    at D:\home\site\wwwroot\app.js:38:11
+    at null.<anonymous> (D:\home\site\wwwroot\db.js:32:4)
+    at EventEmitter.emit (events.js:95:17)
+    at ReadStream._readStream.on.on.on.on.self._fdRead (D:\home\site\wwwroot\node_modules\dirty\lib\dirty\dirty.js:188:12)
+    at ReadStream.EventEmitter.emit (events.js:117:20)
+    at _stream_readable.js:920:16
+    at process._tickCallback (node.js:415:13)
+Tue Feb 18 2014 12:55:40 GMT+0000 (Coordinated Universal Time): Unaught exception: ReferenceError: socketio is not defined
+    at D:\home\site\wwwroot\app.js:38:11
+    at null.<anonymous> (D:\home\site\wwwroot\db.js:32:4)
+    at EventEmitter.emit (events.js:95:17)
+    at ReadStream._readStream.on.on.on.on.self._fdRead (D:\home\site\wwwroot\node_modules\dirty\lib\dirty\dirty.js:188:12)
+    at ReadStream.EventEmitter.emit (events.js:117:20)
+    at _stream_readable.js:920:16
+    at process._tickCallback (node.js:415:13)
+Tue Feb 18 2014 12:55:42 GMT+0000 (Coordinated Universal Time): Unaught exception: ReferenceError: socketio is not defined
+    at D:\home\site\wwwroot\app.js:38:11
+    at null.<anonymous> (D:\home\site\wwwroot\db.js:32:4)
+    at EventEmitter.emit (events.js:95:17)
+    at ReadStream._readStream.on.on.on.on.self._fdRead (D:\home\site\wwwroot\node_modules\dirty\lib\dirty\dirty.js:188:12)
+    at ReadStream.EventEmitter.emit (events.js:117:20)
+    at _stream_readable.js:920:16
+    at process._tickCallback (node.js:415:13)
+Tue Feb 18 2014 12:55:46 GMT+0000 (Coordinated Universal Time): Unaught exception: ReferenceError: socketio is not defined
+    at D:\home\site\wwwroot\app.js:38:11
+    at null.<anonymous> (D:\home\site\wwwroot\db.js:32:4)
+    at EventEmitter.emit (events.js:95:17)
+    at ReadStream._readStream.on.on.on.on.self._fdRead (D:\home\site\wwwroot\node_modules\dirty\lib\dirty\dirty.js:188:12)
+    at ReadStream.EventEmitter.emit (events.js:117:20)
+    at _stream_readable.js:920:16
+    at process._tickCallback (node.js:415:13)
+Tue Feb 18 2014 12:55:54 GMT+0000 (Coordinated Universal Time): Unaught exception: ReferenceError: socketio is not defined
+    at D:\home\site\wwwroot\app.js:38:11
+    at null.<anonymous> (D:\home\site\wwwroot\db.js:32:4)
+    at EventEmitter.emit (events.js:95:17)
+    at ReadStream._readStream.on.on.on.on.self._fdRead (D:\home\site\wwwroot\node_modules\dirty\lib\dirty\dirty.js:188:12)
+    at ReadStream.EventEmitter.emit (events.js:117:20)
+    at _stream_readable.js:920:16
+    at process._tickCallback (node.js:415:13)
+Tue Feb 18 2014 12:56:11 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: Cannot call method 'on' of undefined
+    at Server.<anonymous> (D:\home\site\wwwroot\app.js:43:14)
+    at Server.g (events.js:175:14)
+    at Server.EventEmitter.emit (events.js:117:20)
+    at net.js:1052:10
+    at process._tickCallback (node.js:415:13)

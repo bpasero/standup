@@ -3,8 +3,8 @@
     "editor": {
         "lineNumbers": true,
         "glyphMargin": false,
-        "tabSize": "auto",
-        "insertSpaces": "auto",
+        "tabSize": 2,
+        "insertSpaces": false,
         "roundedSelection": true,
         "scrollBeyondLastLine": true,
         "wrappingColumn": 300,
