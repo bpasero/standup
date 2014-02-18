@@ -211,3 +211,421 @@ Tue Feb 18 2014 14:53:31 GMT+0000 (Coordinated Universal Time): Unaught exceptio
     at Module._compile (module.js:456:26)
     at Object.Module._extensions..js (module.js:474:10)
     at Module.load (module.js:356:32)
+Tue Feb 18 2014 14:56:50 GMT+0000 (Coordinated Universal Time): Unaught exception: AssertionError: path must be a string
+    at Module.require (module.js:362:3)
+    at require (module.js:380:17)
+    at Object.<anonymous> (D:\home\site\wwwroot\io.js:6:10)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (D:\home\site\wwwroot\app.js:11:10)
+Tue Feb 18 2014 14:56:52 GMT+0000 (Coordinated Universal Time): Unaught exception: AssertionError: missing path
+    at Module.require (module.js:363:3)
+    at require (module.js:380:17)
+    at Object.<anonymous> (D:\home\site\wwwroot\io.js:6:10)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (D:\home\site\wwwroot\app.js:11:10)
+Tue Feb 18 2014 14:56:54 GMT+0000 (Coordinated Universal Time): Unaught exception: AssertionError: missing path
+    at Module.require (module.js:363:3)
+    at require (module.js:380:17)
+    at Object.<anonymous> (D:\home\site\wwwroot\io.js:6:10)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (D:\home\site\wwwroot\app.js:11:10)
+Tue Feb 18 2014 14:56:57 GMT+0000 (Coordinated Universal Time): Unaught exception: AssertionError: missing path
+    at Module.require (module.js:363:3)
+    at require (module.js:380:17)
+    at Object.<anonymous> (D:\home\site\wwwroot\io.js:6:10)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (D:\home\site\wwwroot\app.js:11:10)
+Tue Feb 18 2014 14:57:12 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:21:14)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+    at Manager.handleHTTPRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:630:8)
+    at Manager.handleRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:591:12)
+Tue Feb 18 2014 14:57:13 GMT+0000 (Coordinated Universal Time): Unaught exception: SyntaxError: Unexpected token ILLEGAL
+    at Module._compile (module.js:439:25)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (D:\home\site\wwwroot\app.js:11:10)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+Tue Feb 18 2014 14:57:18 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:21:14)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+    at Manager.handleHTTPRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:630:8)
+    at Manager.handleRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:591:12)
+Tue Feb 18 2014 14:57:21 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:21:14)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+    at Manager.handleHTTPRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:630:8)
+    at Manager.handleRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:591:12)
+Tue Feb 18 2014 14:57:25 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:21:14)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+    at Manager.handleHTTPRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:630:8)
+    at Manager.handleRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:591:12)
+Tue Feb 18 2014 14:57:29 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:21:14)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+    at Manager.handleHTTPRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:630:8)
+    at Manager.handleRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:591:12)
+Tue Feb 18 2014 14:57:33 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:21:14)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+    at Manager.handleHTTPRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:630:8)
+    at Manager.handleRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:591:12)
+Tue Feb 18 2014 14:57:41 GMT+0000 (Coordinated Universal Time): Unaught exception: SyntaxError: Unexpected token *
+    at Module._compile (module.js:439:25)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (D:\home\site\wwwroot\app.js:11:10)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+Tue Feb 18 2014 14:57:50 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:21:14)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+    at Manager.handleHTTPRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:630:8)
+    at Manager.handleRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:591:12)
+Tue Feb 18 2014 14:57:58 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:22:14)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+    at Manager.handleHTTPRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:630:8)
+    at Manager.handleRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:591:12)
+Tue Feb 18 2014 14:58:01 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:22:14)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+    at Manager.handleHTTPRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:630:8)
+    at Manager.handleRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:591:12)
+Tue Feb 18 2014 14:58:04 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:22:14)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+    at Manager.handleHTTPRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:630:8)
+    at Manager.handleRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:591:12)
+Tue Feb 18 2014 14:58:08 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:22:14)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+    at Manager.handleHTTPRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:630:8)
+    at Manager.handleRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:591:12)
+Tue Feb 18 2014 14:58:11 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:22:14)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+    at Manager.handleHTTPRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:630:8)
+    at Manager.handleRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:591:12)
+Tue Feb 18 2014 14:58:15 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:22:14)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+    at Manager.handleHTTPRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:630:8)
+    at Manager.handleRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:591:12)
+Tue Feb 18 2014 14:58:19 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:22:14)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+    at Manager.handleHTTPRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:630:8)
+    at Manager.handleRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:591:12)
+Tue Feb 18 2014 14:58:23 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:22:14)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+    at Manager.handleHTTPRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:630:8)
+    at Manager.handleRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:591:12)
+Tue Feb 18 2014 14:58:27 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:22:14)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+    at Manager.handleHTTPRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:630:8)
+    at Manager.handleRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:591:12)
+Tue Feb 18 2014 14:58:31 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:22:14)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+    at Manager.handleHTTPRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:630:8)
+    at Manager.handleRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:591:12)
+Tue Feb 18 2014 14:58:36 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:20:6)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+    at Manager.handleHTTPRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:630:8)
+    at Manager.handleRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:591:12)
+Tue Feb 18 2014 14:58:42 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:24:14)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+    at Manager.handleHTTPRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:630:8)
+    at Manager.handleRequest (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:591:12)
+Tue Feb 18 2014 14:58:49 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at D:\home\site\wwwroot\io.js:22:15
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:20:6)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+Tue Feb 18 2014 14:58:54 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at D:\home\site\wwwroot\io.js:22:15
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:20:6)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+Tue Feb 18 2014 14:58:57 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at D:\home\site\wwwroot\io.js:22:15
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:20:6)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+Tue Feb 18 2014 14:59:00 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at D:\home\site\wwwroot\io.js:22:15
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:20:6)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+Tue Feb 18 2014 14:59:04 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at D:\home\site\wwwroot\io.js:22:15
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:20:6)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+Tue Feb 18 2014 14:59:08 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at D:\home\site\wwwroot\io.js:22:15
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:20:6)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+Tue Feb 18 2014 14:59:11 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at D:\home\site\wwwroot\io.js:22:15
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:20:6)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+Tue Feb 18 2014 14:59:14 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at D:\home\site\wwwroot\io.js:22:15
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:20:6)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+Tue Feb 18 2014 14:59:17 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at D:\home\site\wwwroot\io.js:22:15
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:20:6)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+Tue Feb 18 2014 14:59:20 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at D:\home\site\wwwroot\io.js:22:15
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:20:6)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+Tue Feb 18 2014 14:59:24 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at D:\home\site\wwwroot\io.js:22:15
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:20:6)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+Tue Feb 18 2014 14:59:28 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at D:\home\site\wwwroot\io.js:22:15
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:20:6)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)
+Tue Feb 18 2014 14:59:32 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: undefined is not a function
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at D:\home\site\wwwroot\io.js:22:15
+    at Object.module.exports.getUsers (D:\home\site\wwwroot\db.js:53:2)
+    at SocketNamespace.<anonymous> (D:\home\site\wwwroot\io.js:20:6)
+    at SocketNamespace.EventEmitter.emit [as $emit] (events.js:117:20)
+    at connect (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:292:10)
+    at D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:308:13
+    at SocketNamespace.authorize (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:252:5)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:302:14)
+    at Manager.handleClient (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:698:32)

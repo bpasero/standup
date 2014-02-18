@@ -6,11 +6,10 @@ define([
 		'use strict';
 
 		var ioConnect = function() {
-			var socket = io.connect();
+			var socket = io.connect(); //socket.emit('my other event', { my: 'data' });
 			
-			socket.on('news', function(data) {
+			socket.on('status', function(data) {
 				console.log(data);
-				socket.emit('my other event', { my: 'data' });
 			});
 		}
 
