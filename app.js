@@ -25,8 +25,8 @@ app.get('/', routes.index);
 // db
 db.startup(function() {
   console.log('DB startup done');
-  
-  http.createServer(app).listen(app.get('port'), function(){
+
+  http.createServer(app).listen(app.get('port'), function() {
     console.log('Express server listening on port ' + app.get('port'));
   });
 });

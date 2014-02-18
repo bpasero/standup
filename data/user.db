@@ -1,9 +1,1 @@
-{"key":"bpasero","val":{"name":"Benjamin Pasero"}}
-{"key":"jmoreno","val":{"name":"Joao Moreno"}}
-{"key":"inikolic","val":{"name":"Isidor Nikolic"}}
-{"key":"bpasero","val":{"name":"Benjamin Pasero"}}
-{"key":"jmoreno","val":{"name":"Joao Moreno"}}
-{"key":"inikolic","val":{"name":"Isidor Nikolic"}}
-{"key":"bpasero","val":{"name":"Benjamin Pasero"}}
-{"key":"jmoreno","val":{"name":"Joao Moreno"}}
-{"key":"inikolic","val":{"name":"Isidor Nikolic"}}
+{"key":"users","val":[{"name":"Benjamin Pasero"},{"name":"Joao Moreno"},{"name":"Isidor Nikolic"}]}
