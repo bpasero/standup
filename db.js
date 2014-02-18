@@ -22,9 +22,16 @@ module.exports.startup = function(callback, dblocation) {
 		// add some predefined users unless already done
 		if (!db.get('users')) {
 			var users = [
-				{ name: 'Benjamin Pasero' },
-				{ name: 'Joao Moreno' },
-				{ name: 'Isidor Nikolic' }
+				{ name: 'Martin' },
+				{ name: 'Isidor' },
+				{ name: 'Joh' },
+				{ name: 'André' },
+				{ name: 'João' },
+				{ name: 'Ben' },
+				{ name: 'Alex' },
+				{ name: 'Erich' },
+				{ name: 'Dirk' },
+				{ name: 'Redmond' }
 			]
 
 			db.set('users', users);
