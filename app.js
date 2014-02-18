@@ -14,7 +14,7 @@ var io = require('./io');
 var app = express();
 app.set('port', process.env.PORT);
 app.use(express.favicon());
-app.use(express.logger('dev'));
+app.use(express.logger('tiny'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
