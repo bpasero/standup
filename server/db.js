@@ -35,12 +35,6 @@ module.exports.startup = function(callback, dblocation) {
 				{ name: 'Dirk' },
 				{ name: 'Redmond' }
 			]);
-			
-			// runtime
-			db.set('runtime', {
-				current: null,
-				users: []
-			});
 		} else {
 			callback(false);
 		}
@@ -59,29 +53,38 @@ module.exports.getUsers = function() {
 	return db.get('users');
 };
 
-
 // Get status
 module.exports.getStatus = function() {
 	var users = db.get('users');
-	var runtime = db.get('runtime');
+	var stage = db.get('stage');
 	
 	return {
 		users: users,
-		runtime: runtime	
+		stage: stage	
 	};
 };
 
-// Start
-module.exports.setRuntime = function(current, users) {
-	db.set('runtime', {
+// Get stage
+module.exports.getStage = function() {
+	return db.get('stage');
+};
+
+// Set stage
+module.exports.setStage = function(current, order) {
+	db.set('stage', {
 		current: current,
-		users: users
+		order: order
 	});
+};
+
+// Clear stage
+module.exports.clearStage = function() {
+	db.set('stage', null);
 };
 
 // IsRunning
 module.exports.isRunning = function() {
-	var runtime = db.get('runtime');
+	var stage = db.get('stage');
 	
-	return runtime && runtime.current;
+	return !!stage;
 }

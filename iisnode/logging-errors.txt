@@ -722,3 +722,80 @@ Wed Feb 19 2014 13:05:36 GMT+0000 (Coordinated Universal Time): Unaught exceptio
     at IncomingMessage.<anonymous> (D:\home\site\wwwroot\node_modules\socket.io\lib\transports\http.js:69:12)
     at IncomingMessage.EventEmitter.emit (events.js:92:17)
     at _stream_readable.js:920:16
+Wed Feb 19 2014 13:10:30 GMT+0000 (Coordinated Universal Time): Unaught exception: Error: Cannot start a running standup
+    at Object.start (D:\home\site\wwwroot\server\standup.js:8:9)
+    at Socket.<anonymous> (D:\home\site\wwwroot\server\io.js:28:25)
+    at Socket.EventEmitter.emit [as $emit] (events.js:92:17)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:335:22)
+    at Manager.onClientMessage (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:488:38)
+    at XHRPolling.Transport.onMessage (D:\home\site\wwwroot\node_modules\socket.io\lib\transport.js:387:20)
+    at XHRPolling.HTTPTransport.onData (D:\home\site\wwwroot\node_modules\socket.io\lib\transports\http.js:99:10)
+    at IncomingMessage.<anonymous> (D:\home\site\wwwroot\node_modules\socket.io\lib\transports\http.js:69:12)
+    at IncomingMessage.EventEmitter.emit (events.js:92:17)
+    at _stream_readable.js:920:16
+Wed Feb 19 2014 13:12:29 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: Object #<Object> has no method 'stop'
+    at Socket.<anonymous> (D:\home\site\wwwroot\server\io.js:43:12)
+    at Socket.EventEmitter.emit [as $emit] (events.js:92:17)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:335:22)
+    at Manager.onClientMessage (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:488:38)
+    at XHRPolling.Transport.onMessage (D:\home\site\wwwroot\node_modules\socket.io\lib\transport.js:387:20)
+    at XHRPolling.HTTPTransport.onData (D:\home\site\wwwroot\node_modules\socket.io\lib\transports\http.js:99:10)
+    at IncomingMessage.<anonymous> (D:\home\site\wwwroot\node_modules\socket.io\lib\transports\http.js:69:12)
+    at IncomingMessage.EventEmitter.emit (events.js:92:17)
+    at _stream_readable.js:920:16
+    at process._tickCallback (node.js:415:13)
+Wed Feb 19 2014 13:24:22 GMT+0000 (Coordinated Universal Time): Unaught exception: Error: Cannot start a running standup
+    at Object.start (D:\home\site\wwwroot\server\standup.js:8:9)
+    at Socket.<anonymous> (D:\home\site\wwwroot\server\io.js:26:12)
+    at Socket.EventEmitter.emit [as $emit] (events.js:92:17)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:335:22)
+    at Manager.onClientMessage (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:488:38)
+    at XHRPolling.Transport.onMessage (D:\home\site\wwwroot\node_modules\socket.io\lib\transport.js:387:20)
+    at XHRPolling.HTTPTransport.onData (D:\home\site\wwwroot\node_modules\socket.io\lib\transports\http.js:99:10)
+    at IncomingMessage.<anonymous> (D:\home\site\wwwroot\node_modules\socket.io\lib\transports\http.js:69:12)
+    at IncomingMessage.EventEmitter.emit (events.js:92:17)
+    at _stream_readable.js:920:16
+Wed Feb 19 2014 13:24:27 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: Object #<Object> has no method 'next'
+    at Socket.<anonymous> (D:\home\site\wwwroot\server\io.js:31:12)
+    at Socket.EventEmitter.emit [as $emit] (events.js:92:17)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:335:22)
+    at Manager.onClientMessage (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:488:38)
+    at XHRPolling.Transport.onMessage (D:\home\site\wwwroot\node_modules\socket.io\lib\transport.js:387:20)
+    at XHRPolling.HTTPTransport.onData (D:\home\site\wwwroot\node_modules\socket.io\lib\transports\http.js:99:10)
+    at IncomingMessage.<anonymous> (D:\home\site\wwwroot\node_modules\socket.io\lib\transports\http.js:69:12)
+    at IncomingMessage.EventEmitter.emit (events.js:92:17)
+    at _stream_readable.js:920:16
+    at process._tickCallback (node.js:415:13)
+Wed Feb 19 2014 13:24:31 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: Object #<Object> has no method 'next'
+    at Socket.<anonymous> (D:\home\site\wwwroot\server\io.js:31:12)
+    at Socket.EventEmitter.emit [as $emit] (events.js:92:17)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:335:22)
+    at Manager.onClientMessage (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:488:38)
+    at XHRPolling.Transport.onMessage (D:\home\site\wwwroot\node_modules\socket.io\lib\transport.js:387:20)
+    at XHRPolling.HTTPTransport.onData (D:\home\site\wwwroot\node_modules\socket.io\lib\transports\http.js:99:10)
+    at IncomingMessage.<anonymous> (D:\home\site\wwwroot\node_modules\socket.io\lib\transports\http.js:69:12)
+    at IncomingMessage.EventEmitter.emit (events.js:92:17)
+    at _stream_readable.js:920:16
+    at process._tickCallback (node.js:415:13)
+Wed Feb 19 2014 13:24:34 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: Object #<Object> has no method 'next'
+    at Socket.<anonymous> (D:\home\site\wwwroot\server\io.js:31:12)
+    at Socket.EventEmitter.emit [as $emit] (events.js:92:17)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:335:22)
+    at Manager.onClientMessage (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:488:38)
+    at XHRPolling.Transport.onMessage (D:\home\site\wwwroot\node_modules\socket.io\lib\transport.js:387:20)
+    at XHRPolling.HTTPTransport.onData (D:\home\site\wwwroot\node_modules\socket.io\lib\transports\http.js:99:10)
+    at IncomingMessage.<anonymous> (D:\home\site\wwwroot\node_modules\socket.io\lib\transports\http.js:69:12)
+    at IncomingMessage.EventEmitter.emit (events.js:92:17)
+    at _stream_readable.js:920:16
+    at process._tickCallback (node.js:415:13)
+Wed Feb 19 2014 13:24:36 GMT+0000 (Coordinated Universal Time): Unaught exception: TypeError: Object #<Object> has no method 'next'
+    at Socket.<anonymous> (D:\home\site\wwwroot\server\io.js:31:12)
+    at Socket.EventEmitter.emit [as $emit] (events.js:92:17)
+    at SocketNamespace.handlePacket (D:\home\site\wwwroot\node_modules\socket.io\lib\namespace.js:335:22)
+    at Manager.onClientMessage (D:\home\site\wwwroot\node_modules\socket.io\lib\manager.js:488:38)
+    at XHRPolling.Transport.onMessage (D:\home\site\wwwroot\node_modules\socket.io\lib\transport.js:387:20)
+    at XHRPolling.HTTPTransport.onData (D:\home\site\wwwroot\node_modules\socket.io\lib\transports\http.js:99:10)
+    at IncomingMessage.<anonymous> (D:\home\site\wwwroot\node_modules\socket.io\lib\transports\http.js:69:12)
+    at IncomingMessage.EventEmitter.emit (events.js:92:17)
+    at _stream_readable.js:920:16
+    at process._tickCallback (node.js:415:13)

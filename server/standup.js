@@ -3,17 +3,32 @@
 
 var db = require('./db');
 
-function start() {
+module.exports.start = function() {
 	if (db.isRunning()) {
 		throw new Error("Cannot start a running standup");
 	}
 	
 	var users = db.getUsers();
-	var shuffled = shuffleArray(users);
+	var order = shuffleArray(users);
 	
-	db.setRuntime(shuffled[0], shuffled);
+	db.setStage(0, order);
+}
+
+module.exports.next = function() {
+	if (!db.isRunning()) {
+		throw new Error("Cannot next on a not running standup");
+	}
 	
-	return db.getStatus();
+	var stage = db.getStage();
+	if (stage && stage.current < stage.order.length) {
+		db.setStage(stage.current + 1, stage.order);
+	} else {
+		throw new Error("Already at the end");
+	}
+}
+
+module.exports.stop = function() {
+	db.clearStage();
 }
 
 function shuffleArray(array) {
@@ -26,5 +41,3 @@ function shuffleArray(array) {
 	
     return array;
 }
-
-exports.start = start;

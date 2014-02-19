@@ -23,14 +23,13 @@ module.exports.connect = function(server) {
 		
 		// react to actions
 		socket.on('start', function(data) { 
-			console.log('client request: start');
-			
-			var status = standup.start();
-			socket.emit('status', status);
+			standup.start();
+			socket.emit('status', db.getStatus());
 		});
 		
 		socket.on('next', function(data) { 
-			console.log('client request: next'); 
+			standup.next();
+			socket.emit('status', db.getStatus());
 		});
 		
 		socket.on('pause', function(data) { 
@@ -38,7 +37,8 @@ module.exports.connect = function(server) {
 		});
 		
 		socket.on('stop', function(data) { 
-			console.log('client request: stop'); 
+			standup.stop();
+			socket.emit('status', db.getStatus());
 		});
 	});
 }
