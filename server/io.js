@@ -47,11 +47,6 @@ module.exports.connect = function(server) {
 				});
 			});
 			
-			socket.on('pause', function() { 
-				console.log('client request: pause'); 
-				broadcastStatus(socket);
-			});
-			
 			socket.on('stop', function() { 
 				standup.stop(function(err) {
 					if (err) {

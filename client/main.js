@@ -27,10 +27,6 @@ define([
 		socket.emit('next');
 	});
 	
-	$('#pause').on('click', function() {
-		socket.emit('pause');
-	});
-	
 	$('#stop').on('click', function() {
 		socket.emit('stop');
 	});

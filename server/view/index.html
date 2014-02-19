@@ -24,20 +24,51 @@
 		<!-- Main -->
 		<script>
 			require.config({
-		        shim: {
-		          'socketio': {
-		            exports: 'io'
-		          }
-		        },
-		        paths: {
-		          socketio: '../socket.io/socket.io',
-		        },
+        shim: {
+          'socketio': {
+            exports: 'io'
+          },
+          'jquery': {
+              exports: '$'
+          },
+        },
+        paths: {
+          socketio: '../socket.io/socket.io',
+          jquery: '/lib/jquery/jquery-1.11.0.min',
+        },
 				baseUrl: '/',
-		      });
-		      
-		      require(['main'], function(main) {
-		        
-		      });
+      });
+      
+      var formatDate = (function() {
+        var d_names = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+        var m_names = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+      
+        return function(d) {
+          var curr_day = d.getDay();
+          var curr_date = d.getDate();
+          var sup = "";
+          if (curr_date == 1 || curr_date == 21 || curr_date ==31) {
+            sup = "st";
+          } else if (curr_date == 2 || curr_date == 22) {
+            sup = "nd";
+          } else if (curr_date == 3 || curr_date == 23) {
+            sup = "rd";
+          } else { 
+            sup = "th";
+          }
+          
+          var curr_month = d.getMonth();
+          var curr_year = d.getFullYear();
+          
+          return (d_names[curr_day] + ", " + curr_date + "<SUP>" + sup + "</SUP> " + m_names[curr_month] + " " + curr_year);
+        };
+      })();
+      
+      require(['main', 'jquery'], function(main, jquery) {
+        
+        // Date
+        $('#navdate').html('Standup for ' + formatDate(new Date()));
+      });
 		</script>
 	</head>
 	<body>
@@ -55,7 +86,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="#">Stand-up for Tuesday, 18th February 2014</a>
+		      <span class="navbar-brand" href="#" id="navdate"></span>
 		    </div>
 		
 		    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -115,7 +146,6 @@
 		
 		<button type="button" class="btn btn-primary" id="start">Start</button>
 		<button type="button" class="btn btn-primary" id="next">Next</button>
-		<button type="button" class="btn btn-primary" id="pause">Pause / Resume</button>
 		<button type="button" class="btn btn-primary" id="stop">Stop</button>
     
     <div id="main">Loading...</div>
