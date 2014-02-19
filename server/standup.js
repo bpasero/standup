@@ -18,7 +18,9 @@ module.exports.start = function(callback) {
 				return callback(err);
 			}
 			
-			var order = shuffleArray(users);
+			var order = shuffleArray(clone(users));
+			var presenter = order[0];
+			presenter.time = new Date().getTime();
 			
 			return db.setStage(0, order, callback);
 		});
@@ -41,7 +43,11 @@ module.exports.next = function(callback) {
 			}
 			
 			if (stage && stage.current + 1 < stage.order.length) {
-				return db.setStage(stage.current + 1, stage.order, callback);
+				var next = stage.current + 1;
+				var presenter = stage.order[next];
+				presenter.time = new Date().getTime();
+			
+				return db.setStage(next, stage.order, callback);
 			}
 			
 			return callback(new Error("Already at the end"));
@@ -54,8 +60,6 @@ module.exports.stop = function(callback) {
 }
 
 function shuffleArray(array) {
-	array = array.slice(0); // do not modify the original array
-	
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = array[i];
@@ -64,4 +68,21 @@ function shuffleArray(array) {
     }
 	
     return array;
+}
+
+function clone(obj) {
+	if (!obj || typeof obj !== 'object') {
+		return obj;
+	}
+	
+	var result = (Array.isArray(obj)) ? [] : {};
+	Object.keys(obj).forEach(function(key) {
+		if (obj[key] && typeof obj[key] === 'object') {
+			result[key] = clone(obj[key]);
+		} else {
+			result[key] = obj[key];
+		}
+	});
+	
+	return result;
 }

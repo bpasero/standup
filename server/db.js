@@ -35,12 +35,12 @@ function createDb(path, callback) {
 			
 			set: function(key, value, c) {
 				contents[key] = value;
-				fs.writeFile(path, JSON.stringify(contents), c);
+				fs.writeFile(path, JSON.stringify(contents, null, '  '), c);
 			},
 			
 			del: function(key, c) {
 				delete contents[key];
-				fs.writeFile(path, JSON.stringify(contents), c);
+				fs.writeFile(path, JSON.stringify(contents, null, '  '), c);
 			}
 		});
 	});
