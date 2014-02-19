@@ -12,6 +12,6 @@ define([
 		}
 
 	return {
-			ioConnect: ioConnect
-		};
+		ioConnect: ioConnect
+	};
 });
