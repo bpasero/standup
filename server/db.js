@@ -103,7 +103,7 @@ module.exports.getStatus = function(callback) {
 			
 			return callback(null, {
 				users: users,
-				stage: stage	
+				stage: stage
 			});
 		});
 	});

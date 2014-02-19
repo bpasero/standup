@@ -32,35 +32,39 @@
     }
   ],
   "stage": {
-    "current": 0,
+    "current": 4,
     "order": [
       {
+        "name": "Isidor",
+        "time": 1392828152551
+      },
+      {
+        "name": "Ben",
+        "time": 1392828153938
+      },
+      {
+        "name": "Martin",
+        "time": 1392828154330
+      },
+      {
         "name": "Redmond",
-        "time": 1392826700181
+        "time": 1392828154487
       },
       {
-        "name": "Joh"
+        "name": "André",
+        "time": 1392828154669
       },
       {
-        "name": "Isidor"
-      },
-      {
-        "name": "Ben"
-      },
-      {
-        "name": "André"
-      },
-      {
-        "name": "João"
+        "name": "Dirk"
       },
       {
         "name": "Alex"
       },
       {
-        "name": "Martin"
+        "name": "João"
       },
       {
-        "name": "Dirk"
+        "name": "Joh"
       },
       {
         "name": "Erich"

@@ -18,6 +18,9 @@ module.exports.connect = function(server) {
 	// new client connecting
 	io.sockets.on('connection', function(socket) {
 		
+		// sync time
+		socket.emit('sync', new Date().getTime());
+		
 		// send status
 		db.getStatus(function(err, status) {
 			if (err) {

@@ -67,7 +67,7 @@
       require(['main', 'jquery'], function(main, jquery) {
         
         // Date
-        $('#navdate').html('Standup for ' + formatDate(new Date()));
+        $('#navdate').html(formatDate(new Date()));
       });
 		</script>
 	</head>
@@ -143,12 +143,15 @@
       <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
-		
-		<button type="button" class="btn btn-primary" id="start">Start</button>
-		<button type="button" class="btn btn-primary" id="next">Next</button>
-		<button type="button" class="btn btn-primary" id="stop">Stop</button>
     
-    <div id="main">Loading...</div>
+    <div class="btn-group btn-group-lg">
+  		<button type="button" class="btn btn-primary" id="start">Start</button>
+  		<button type="button" class="btn btn-primary" id="next">Next</button>
+  		<button type="button" class="btn btn-primary" id="stop">Stop</button>
+    </div>
+    
+    <br /><br />
+    
     <div id="stage"></div>
 		
 	</body>
