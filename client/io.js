@@ -1,17 +1,17 @@
 define([
 	'socketio'
 ], function(io) {
-		'use strict';
+	'use strict';
 
-		var ioConnect = function(callback) {
-			var socket = io.connect(); //socket.emit('my other event', { my: 'data' });
-			
-			socket.on('status', function(data) {
-				callback(data);
-			});
-		}
+	var connect = function(callback) {
+		var socket = io.connect(); 
+		
+		socket.on('status', function(data) {
+			callback(socket, data);
+		});
+	}
 
 	return {
-		ioConnect: ioConnect
+		connect: connect
 	};
 });

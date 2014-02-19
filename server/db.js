@@ -6,7 +6,7 @@ var dirty = require('dirty');
 var DEFAULT_DB_LOCATION = 'server/data/user.db';
 var db = {
 	get: function() {
-		throw new Error('Call startup first');
+		throw new Error('Call startup() first');
 	}
 }
 
@@ -19,9 +19,11 @@ module.exports.startup = function(callback, dblocation) {
 
 	db.on('load', function() {
 
-		// add some predefined users unless already done
+		// add presets for first time db load
 		if (!db.get('users')) {
-			var users = [
+			
+			// users
+			db.set('users', [
 				{ name: 'Martin' },
 				{ name: 'Isidor' },
 				{ name: 'Joh' },
@@ -32,9 +34,13 @@ module.exports.startup = function(callback, dblocation) {
 				{ name: 'Erich' },
 				{ name: 'Dirk' },
 				{ name: 'Redmond' }
-			]
-
-			db.set('users', users);
+			]);
+			
+			// runtime
+			db.set('runtime', {
+				current: null,
+				running: false
+			});
 		} else {
 			callback(false);
 		}
@@ -46,9 +52,25 @@ module.exports.startup = function(callback, dblocation) {
 			done = true;
 		}
 	});
-}
+};
 
-// Get users
-module.exports.getUsers = function(callback) {
-	callback(db.get('users'));
-}
+// Get status
+module.exports.getStatus = function(callback) {
+	var users = db.get('users');
+	var runtime = db.get('runtime');
+	
+	callback({
+		users: users,
+		runtime: runtime	
+	});
+};
+
+// Start
+module.exports.start = function(callback) {
+	db.set('runtime', {
+		current: null,
+		running: true
+	});
+	
+	callback();
+};

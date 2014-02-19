@@ -15,12 +15,32 @@ module.exports.connect = function(server) {
 	});
 	
 	// new client connecting
-	// socket.on('my other event', function(data) { console.log(data); });
 	io.sockets.on('connection', function(socket) {
-		db.getUsers(function(users) {
-			socket.emit('status', { 
-				users: users
+		
+		// send status
+		db.getStatus(function(status) {
+			socket.emit('status', status);
+		});
+		
+		// react to actions
+		socket.on('start', function(data) { 
+			console.log('start');
+			
+			db.start(function() {
+					
 			});
+		});
+		
+		socket.on('next', function(data) { 
+			console.log('next'); 
+		});
+		
+		socket.on('pause', function(data) { 
+			console.log('pause'); 
+		});
+		
+		socket.on('stop', function(data) { 
+			console.log('stop'); 
 		});
 	});
 }
