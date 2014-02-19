@@ -25,8 +25,10 @@ app.use(express.static(path.join(__dirname, '..', 'client')));
 app.get('/', routes.index);
 
 // db
-db.startup(function(created) {
-	if (created) {
+db.startup(function(error, created) {
+	if (error) {
+		console.error('error: ' + error.toString());
+	} else if (created) {
 		console.log('info: Created a new database file');
 	} else {
 		console.log('info: Connected to existing database file');

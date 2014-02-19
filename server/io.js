@@ -19,32 +19,59 @@ module.exports.connect = function(server) {
 	io.sockets.on('connection', function(socket) {
 		
 		// send status
-		socket.emit('status', db.getStatus());
-		
-		// react to actions
-		socket.on('start', function(data) { 
-			standup.start();
-			broadcastStatus(socket);
-		});
-		
-		socket.on('next', function(data) { 
-			standup.next();
-			broadcastStatus(socket);
-		});
-		
-		socket.on('pause', function(data) { 
-			console.log('client request: pause'); 
-			broadcastStatus(socket);
-		});
-		
-		socket.on('stop', function(data) { 
-			standup.stop();
-			broadcastStatus(socket);
+		db.getStatus(function(err, status) {
+			if (err) {
+				console.error(err);
+			}
+			
+			socket.emit('status', status);
+			
+			// react to actions
+			socket.on('start', function() { 
+				standup.start(function(err) {
+					if (err) {
+						console.error(err);
+					}
+			
+					broadcastStatus(socket);
+				});
+			});
+			
+			socket.on('next', function() { 
+				standup.next(function(err) {
+					if (err) {
+						console.error(err);
+					}
+			
+					broadcastStatus(socket);
+				});
+			});
+			
+			socket.on('pause', function() { 
+				console.log('client request: pause'); 
+				broadcastStatus(socket);
+			});
+			
+			socket.on('stop', function() { 
+				standup.stop(function(err) {
+					if (err) {
+						console.error(err);
+					}
+			
+					broadcastStatus(socket);
+				});
+			});
 		});
 	});
 }
 
 function broadcastStatus(socket) {
-	socket.emit('status', db.getStatus());
-	socket.broadcast.emit('status', db.getStatus());
+	db.getStatus(function(err, status) {
+		if (err) {
+			console.error(err);
+		} else {
+			socket.emit('status', status);
+			socket.broadcast.emit('status', status);
+		}
+	});
 }

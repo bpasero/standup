@@ -3,32 +3,54 @@
 
 var db = require('./db');
 
-module.exports.start = function() {
-	if (db.isRunning()) {
-		throw new Error("Cannot start a running standup");
-	}
-	
-	var users = db.getUsers();
-	var order = shuffleArray(users);
-	
-	db.setStage(0, order);
+module.exports.start = function(callback) {
+	db.isRunning(function(err, isRunning) {
+		if (err) {
+			return callback(err);
+		}
+			
+		if (isRunning) {
+			return callback(new Error("Cannot start a running standup"));
+		}
+		
+		var users = db.getUsers(function(err, users) {
+			if (err) {
+				return callback(err);
+			}
+			
+			var order = shuffleArray(users);
+			
+			return db.setStage(0, order, callback);
+		});
+	});
 }
 
-module.exports.next = function() {
-	if (!db.isRunning()) {
-		throw new Error("Cannot next on a not running standup");
-	}
-	
-	var stage = db.getStage();
-	if (stage && stage.current + 1 < stage.order.length) {
-		db.setStage(stage.current + 1, stage.order);
-	} else {
-		throw new Error("Already at the end");
-	}
+module.exports.next = function(callback) {
+	db.isRunning(function(err, isRunning) {
+		if (err) {
+			return callback(err);
+		}
+		
+		if (!isRunning) {
+			return callback(new Error("Cannot next on a not running standup"));
+		}
+		
+		var stage = db.getStage(function(err, stage) {
+			if (err) {
+				return callback(err);
+			}
+			
+			if (stage && stage.current + 1 < stage.order.length) {
+				return db.setStage(stage.current + 1, stage.order, callback);
+			}
+			
+			return callback(new Error("Already at the end"));
+		});
+	});
 }
 
-module.exports.stop = function() {
-	db.clearStage();
+module.exports.stop = function(callback) {
+	db.clearStage(callback);
 }
 
 function shuffleArray(array) {
