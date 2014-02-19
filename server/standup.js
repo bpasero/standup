@@ -19,6 +19,12 @@ module.exports.start = function(callback) {
 			}
 			
 			var order = shuffleArray(clone(users));
+			
+			// Boss is always last
+			order.push({
+				name: 'Erich Team Lead'	
+			});
+			
 			var presenter = order[0];
 			presenter.time = new Date().getTime();
 			
