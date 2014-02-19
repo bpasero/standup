@@ -20,7 +20,7 @@ module.exports.next = function() {
 	}
 	
 	var stage = db.getStage();
-	if (stage && stage.current < stage.order.length) {
+	if (stage && stage.current + 1 < stage.order.length) {
 		db.setStage(stage.current + 1, stage.order);
 	} else {
 		throw new Error("Already at the end");
@@ -32,6 +32,8 @@ module.exports.stop = function() {
 }
 
 function shuffleArray(array) {
+	array = array.slice(0); // do not modify the original array
+	
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = array[i];

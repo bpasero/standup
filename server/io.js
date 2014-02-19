@@ -24,21 +24,27 @@ module.exports.connect = function(server) {
 		// react to actions
 		socket.on('start', function(data) { 
 			standup.start();
-			socket.emit('status', db.getStatus());
+			broadcastStatus(socket);
 		});
 		
 		socket.on('next', function(data) { 
 			standup.next();
-			socket.emit('status', db.getStatus());
+			broadcastStatus(socket);
 		});
 		
 		socket.on('pause', function(data) { 
 			console.log('client request: pause'); 
+			broadcastStatus(socket);
 		});
 		
 		socket.on('stop', function(data) { 
 			standup.stop();
-			socket.emit('status', db.getStatus());
+			broadcastStatus(socket);
 		});
 	});
+}
+
+function broadcastStatus(socket) {
+	socket.emit('status', db.getStatus());
+	socket.broadcast.emit('status', db.getStatus());
 }
