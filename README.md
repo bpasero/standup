@@ -1,4 +1,0 @@
-standup
-=======
-
-Standup Tool

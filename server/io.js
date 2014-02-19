@@ -10,7 +10,7 @@ module.exports.connect = function(server) {
 	// socket.io config
 	var io = socketio.listen(server);
 	io.configure(function() {
-		io.set('transports', ['xhr-polling']);
+//		io.set('transports', ['xhr-polling']);
 		io.set('log level', 1); 
 	});
 	

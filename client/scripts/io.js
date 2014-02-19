@@ -5,11 +5,11 @@ define([
 ], function(io) {
 		'use strict';
 
-		var ioConnect = function() {
+		var ioConnect = function(callback) {
 			var socket = io.connect(); //socket.emit('my other event', { my: 'data' });
 			
 			socket.on('status', function(data) {
-				console.log(data);
+				callback(data);
 			});
 		}
 
