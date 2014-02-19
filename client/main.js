@@ -1,11 +1,13 @@
 /// <reference path="./declare/jquery.d.ts" />
 
 define([
-	'io'
+	'socketio'
 ], function(io) {
 	'use strict';
 	
-	io.connect(function(socket, status) {
+	var socket = io.connect(); 
+		
+	socket.on('status', function(status) {
 		
 		// Runtime
 		var users = status.users;
@@ -16,30 +18,30 @@ define([
 		} else {
 			$('#main').text("Press start to go");
 		}
+	});
+	
+	// Actions
+	$('#start').on('click', function() {
+		console.log("start");
 		
-		// Actions
-		$('#start').on('click', function() {
-			console.log("start");
-			
-			socket.emit('start');
-		});
+		socket.emit('start');
+	});
+	
+	$('#next').on('click', function() {
+		console.log("next");
 		
-		$('#next').on('click', function() {
-			console.log("next");
-			
-			socket.emit('next');
-		});
+		socket.emit('next');
+	});
+	
+	$('#pause').on('click', function() {
+		console.log("pause");
 		
-		$('#pause').on('click', function() {
-			console.log("pause");
-			
-			socket.emit('pause');
-		});
+		socket.emit('pause');
+	});
+	
+	$('#stop').on('click', function() {
+		console.log("stop");
 		
-		$('#stop').on('click', function() {
-			console.log("stop");
-			
-			socket.emit('stop');
-		});
+		socket.emit('stop');
 	});
 });

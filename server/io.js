@@ -4,6 +4,7 @@
 var socketio = require('socket.io');
 
 var db = require('./db');
+var standup = require('./standup');
 
 module.exports.connect = function(server) {
 	
@@ -18,29 +19,26 @@ module.exports.connect = function(server) {
 	io.sockets.on('connection', function(socket) {
 		
 		// send status
-		db.getStatus(function(status) {
-			socket.emit('status', status);
-		});
+		socket.emit('status', db.getStatus());
 		
 		// react to actions
 		socket.on('start', function(data) { 
-			console.log('start');
+			console.log('client request: start');
 			
-			db.start(function() {
-					
-			});
+			var status = standup.start();
+			socket.emit('status', status);
 		});
 		
 		socket.on('next', function(data) { 
-			console.log('next'); 
+			console.log('client request: next'); 
 		});
 		
 		socket.on('pause', function(data) { 
-			console.log('pause'); 
+			console.log('client request: pause'); 
 		});
 		
 		socket.on('stop', function(data) { 
-			console.log('stop'); 
+			console.log('client request: stop'); 
 		});
 	});
 }

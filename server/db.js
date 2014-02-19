@@ -39,7 +39,7 @@ module.exports.startup = function(callback, dblocation) {
 			// runtime
 			db.set('runtime', {
 				current: null,
-				running: false
+				users: []
 			});
 		} else {
 			callback(false);
@@ -54,23 +54,34 @@ module.exports.startup = function(callback, dblocation) {
 	});
 };
 
+// Get users
+module.exports.getUsers = function() {
+	return db.get('users');
+};
+
+
 // Get status
-module.exports.getStatus = function(callback) {
+module.exports.getStatus = function() {
 	var users = db.get('users');
 	var runtime = db.get('runtime');
 	
-	callback({
+	return {
 		users: users,
 		runtime: runtime	
-	});
+	};
 };
 
 // Start
-module.exports.start = function(callback) {
+module.exports.setRuntime = function(current, users) {
 	db.set('runtime', {
-		current: null,
-		running: true
+		current: current,
+		users: users
 	});
-	
-	callback();
 };
+
+// IsRunning
+module.exports.isRunning = function() {
+	var runtime = db.get('runtime');
+	
+	return runtime && runtime.current;
+}

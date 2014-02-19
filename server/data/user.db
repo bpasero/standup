@@ -1,2 +1,3 @@
 {"key":"users","val":[{"name":"Martin"},{"name":"Isidor"},{"name":"Joh"},{"name":"André"},{"name":"João"},{"name":"Ben"},{"name":"Alex"},{"name":"Erich"},{"name":"Dirk"},{"name":"Redmond"}]}
 {"key":"runtime","val":{"current":null,"running":false}}
+{"key":"runtime","val":{"current":{"name":"Redmond"},"users":[{"name":"Redmond"},{"name":"Dirk"},{"name":"Isidor"},{"name":"Martin"},{"name":"Erich"},{"name":"Ben"},{"name":"Alex"},{"name":"João"},{"name":"Joh"},{"name":"André"}]}}
