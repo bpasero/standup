@@ -1,5 +1,3 @@
-/// <reference path="../../declare/socket.io.d.ts" />
-
 define([
 	'socketio'
 ], function(io) {

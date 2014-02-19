@@ -11,7 +11,7 @@ describe('DB', function() {
 			db.startup(function() {
 				db.getUsers(function(users) {
 					fs.unlinkSync('test.db');
-					assert.equal(3, users.length);
+					assert.equal(10, users.length);
 					done();
 				});
 			}, 'test.db');

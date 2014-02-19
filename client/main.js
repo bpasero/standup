@@ -1,4 +1,4 @@
-/// <reference path="../declare/jquery.d.ts" />
+/// <reference path="./declare/jquery.d.ts" />
 
 define([
 	'io'
