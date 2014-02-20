@@ -46,7 +46,7 @@ define([
 		}
 		
 		// Stage
-		var stageList = ['<div class="list-group">'];
+		var stageList = [];
 		stageList = stageList.concat(stage.order.map(function(actor, index) {
 			if (index === stage.current) {
 				var actorStart = actor.time;
@@ -68,18 +68,12 @@ define([
 				}
 				
 				return [
-					format('<a class="list-group-item active"><h3>{0}</h3>', actor.name),
-					'<div class="progress progress-striped">',
-					format(' <div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="{1}" aria-valuemin="0" aria-valuemax="100" style="width: {2}%">', className, percentageDone, percentageDone),
-					format('   <span class="sr-only">{0}% Complete</span>', diff),
-					' </div>',
-					'</div></a>'
+					format('<span class="list-group-item list-group-item-success" style="border-top-left-radius: 0; border-top-right-radius: 0;"><h3>{0}</h3></span>', actor.name)
 				].join('\n');
 			}
 			
-			return '<a class="list-group-item">' + actor.name + '</a>'
+			return '<span class="list-group-item" style="border-top-left-radius: 0; border-top-right-radius: 0;">' + actor.name + '</span>'
 		}));
-		stageList.push('</div>');
 
 		$('#stage').empty();
 		$('#stage').html(stageList.join('\n'));
