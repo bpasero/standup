@@ -60,15 +60,8 @@ define([
 					className = 'warning';
 				}
 				
-				var percentageDone = 0;
-				if (diff >= max) {
-					percentageDone = 100;
-				} else {
-					percentageDone = (diff / max) * 100;
-				}
-				
 				return [
-					format('<span class="list-group-item list-group-item-success" style="border-top-left-radius: 0; border-top-right-radius: 0;"><h3>{0}</h3></span>', actor.name)
+					format('<span class="list-group-item list-group-item-{0}" style="border-top-left-radius: 0; border-top-right-radius: 0;"><h3>{1}</h3></span>', className, actor.name)
 				].join('\n');
 			}
 			
