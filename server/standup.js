@@ -9,6 +9,32 @@ var utils = require('./utils');
 var config = require('../config');
 
 module.exports.init = function(callback) {
+	db.needsReinit(function(err, needsReinit) {
+		if (err) {
+			return callback(err);
+		}
+		
+		if (needsReinit) {
+			db.reinit(function(err) {
+				if (err) {
+					return callback(err);
+				}
+				
+				return module.exports.shuffle(function(err) {
+					if (err) {
+						return callback(err);
+					}
+					
+					return callback(null, true);
+				});
+			});
+		} else {
+			return callback(null, false);
+		}
+	});
+};
+
+module.exports.shuffle = function(callback) {
 	var users = config.users;
 	var order = utils.shuffleArray(utils.clone(users));
 	
@@ -18,9 +44,7 @@ module.exports.init = function(callback) {
 	});
 	
 	return db.setStage(-1, order, callback);
-}
-
-module.exports.shuffle = module.exports.init;
+};
 
 module.exports.start = function(callback) {
 	db.isRunning(function(err, isRunning) {

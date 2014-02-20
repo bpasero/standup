@@ -29,12 +29,18 @@ app.get('/', routes.index);
 db.startup(function(error, created) {
 	if (error) {
 		console.error('error: ' + error.toString());
+	} else if (created) {
+		console.log('Created new DB');
+	} else {
+		console.log('Connected to existing DB');
 	}
 
 	// initial data
-	standup.init(function(error) {
+	standup.init(function(error, reinit) {
 		if (error) {
 			console.error('error: ' + error.toString());
+		} else if (reinit) {
+			console.log('Reshuffled stage');
 		}
 		
 		// server & socket.io
