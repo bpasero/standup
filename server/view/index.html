@@ -68,16 +68,6 @@
         
         // Date
         $('#navdate').html(formatDate(new Date()));
-        
-        // Music
-        $('#music').on('click', function() {
-          var audio = document.getElementsByTagName("audio")[0];
-          if (audio && audio.paused) {
-            audio.play();
-          } else {
-            audio.pause();
-          }
-        });
       });
 		</script>
 	</head>

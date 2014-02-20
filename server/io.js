@@ -69,6 +69,11 @@ module.exports.connect = function(server) {
 					broadcastStage(socket);
 				});
 			});
+			
+			socket.on('music', function() { 
+				socket.emit('music', true);
+				socket.broadcast.emit('music', true);
+			});
 		});
 	});
 }

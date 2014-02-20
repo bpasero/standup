@@ -13,6 +13,15 @@ define([
 		serverTimeOffset = new Date().getTime() - time;
 	});
 	
+	socket.on('music', function() {
+		var audio = document.getElementsByTagName("audio")[0];
+		if (audio && audio.paused) {
+			audio.play();
+		} else {
+			audio.pause();
+		}
+	});
+	
 	socket.on('stage', function(s) {
 		stage = s;
 		render(stage);
@@ -105,5 +114,9 @@ define([
 	
 	$('#stop').on('click', function() {
 		socket.emit('stop');
+	});
+	
+	$('#music').on('click', function() {
+		socket.emit('music');
 	});
 });
