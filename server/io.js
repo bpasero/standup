@@ -71,7 +71,6 @@ module.exports.connect = function(server) {
 			});
 			
 			socket.on('music', function() { 
-				socket.emit('music', true);
 				socket.broadcast.emit('music', true);
 			});
 		});

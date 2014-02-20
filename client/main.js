@@ -14,12 +14,7 @@ define([
 	});
 	
 	socket.on('music', function() {
-		var audio = document.getElementsByTagName("audio")[0];
-		if (audio && audio.paused) {
-			audio.play();
-		} else {
-			audio.pause();
-		}
+		toggleAudio();
 	});
 	
 	socket.on('stage', function(s) {
@@ -83,24 +78,6 @@ define([
 		$('#stage').html(stageList.join('\n'));
 	}
 	
-	function format(value) {
-        var args = [];
-        for (var _i = 0; _i < (arguments.length - 1); _i++) {
-            args[_i] = arguments[_i + 1];
-        }
-        if (args.length === 0) {
-            return value;
-        }
-
-        var str = value;
-        var len = args.length;
-        for (var i = 0; i < len; i++) {
-            str = str.replace(new RegExp('\\{' + i + '\\}', 'g'), args[i]);
-        }
-
-        return str;
-    }
-	
 	// Actions
 	$('#start').on('click', function() {
 		socket.emit('start');
@@ -120,5 +97,34 @@ define([
 	
 	$('#music').on('click', function() {
 		socket.emit('music');
+		toggleAudio();
 	});
+	
+	// Helper
+	function format(value) {
+        var args = [];
+        for (var _i = 0; _i < (arguments.length - 1); _i++) {
+            args[_i] = arguments[_i + 1];
+        }
+        if (args.length === 0) {
+            return value;
+        }
+
+        var str = value;
+        var len = args.length;
+        for (var i = 0; i < len; i++) {
+            str = str.replace(new RegExp('\\{' + i + '\\}', 'g'), args[i]);
+        }
+
+        return str;
+    }
+	
+	function toggleAudio() {
+		var audio = document.getElementsByTagName("audio")[0];
+		if (audio && audio.paused) {
+			audio.play();
+		} else {
+			audio.pause();
+		}
+	}
 });
