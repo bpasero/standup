@@ -65,7 +65,7 @@ define([
 				].join('\n');
 			}
 			
-			return '<span class="list-group-item" style="border-top-left-radius: 0; border-top-right-radius: 0;">' + actor.name + '</span>'
+			return '<span class="list-group-item" style="border-top-left-radius: 0; border-top-right-radius: 0;"><h5>' + actor.name + '</h5></span>'
 		}));
 
 		$('#stage').empty();
