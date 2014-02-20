@@ -92,19 +92,28 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="https://stand.scm.azurewebsites.net/dev/wwwroot">Edit</a></li>
+		        <li><a href="https://stand.scm.azurewebsites.net/dev/wwwroot/config.json">Edit</a></li>
 		      </ul>
 		    </div>
 		  </div>
 		</nav>
-		
-    <div class="btn-group btn-group-lg">
-  		<button type="button" class="btn btn-primary" id="start" data-toggle="modal" data-target="#recordingAlert">Start</button>
-  		<button type="button" class="btn btn-primary" id="next">Next</button>
-  		<button type="button" class="btn btn-primary" id="stop">Stop</button>
+    
+    <div class="container">
+      <div class="btn-group btn-group-lg">
+    		<button type="button" class="btn btn-primary" id="start" data-toggle="modal" data-target="#recordingAlert">Start</button>
+    		<button type="button" class="btn btn-primary" id="shuffle">Shuffle</button>
+    		<button type="button" class="btn btn-primary" id="next">Next</button>
+    		<button type="button" class="btn btn-primary" id="stop">Stop</button>
+      </div>
     </div>
     
-    <!-- Start Recording Alert -->
+    <div class="container">
+      <br /><br />
+      <div id="stage"></div>
+    </div>
+		
+    <!-- Recording Alert
+    ================================================== -->
     <div class="modal fade" id="recordingAlert" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -121,11 +130,7 @@
         </div>
       </div>
     </div>
-    
-    <br /><br />
-    
-    <div id="stage"></div>
-		
+      
 	</body>
 
 </html>

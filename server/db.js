@@ -15,10 +15,16 @@ function createDb(path, callback) {
 						return clb(err);
 					}
 					
-					clb(null, JSON.parse(val));
+					return clb(null, JSON.parse(val));
 				});
 			} else {
-				clb(null, {});
+				fs.writeFile(path, JSON.stringify({}), function(err) {
+					if (err) {
+						return clb(err);
+					}
+					
+					return clb(null, {});
+				});
 			}
 		});
 	}
@@ -55,57 +61,8 @@ module.exports.startup = function(callback, dblocation) {
 		}
 		
 		db = jsonDb;
-		db.get('users', function(err, val) {
-			if (err) { 
-				return callback(err); 
-			}
-			
-			if (!val) {
-				
-				// users
-				db.set('users', [
-					{ name: 'Martin' },
-					{ name: 'Isidor' },
-					{ name: 'Joh' },
-					{ name: 'André' },
-					{ name: 'João' },
-					{ name: 'Ben' },
-					{ name: 'Alex' },
-					{ name: 'Erich' },
-					{ name: 'Dirk' },
-					{ name: 'Redmond' }
-				], function(err) {
-					if (err) { 
-						return callback(err); 
-					}
-					
-					return callback(null, true);
-				});
-			} else {
-				return callback(null, false);
-			}
-		});
-	});
-};
-
-// Get users
-module.exports.getUsers = function(callback) {
-	return db.get('users', callback);
-};
-
-// Get status
-module.exports.getStatus = function(callback) {
-	var users = db.get('users', function(err, users) {
-		var stage = db.get('stage', function(err, stage) {
-			if (err) { 
-				return callback(err); 
-			}
-			
-			return callback(null, {
-				users: users,
-				stage: stage
-			});
-		});
+		
+		return callback(null);
 	});
 };
 
@@ -130,6 +87,6 @@ module.exports.clearStage = function(callback) {
 // IsRunning
 module.exports.isRunning = function(callback) {
 	var stage = db.get('stage', function(err, stage) {
-		return callback(err, !!stage);
+		return callback(err, stage && stage.current >= 0);
 	});
 }

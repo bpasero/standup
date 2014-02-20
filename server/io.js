@@ -22,12 +22,12 @@ module.exports.connect = function(server) {
 		socket.emit('sync', new Date().getTime());
 		
 		// send status
-		db.getStatus(function(err, status) {
+		db.getStage(function(err, stage) {
 			if (err) {
 				console.error(err);
 			}
 			
-			socket.emit('status', status);
+			socket.emit('stage', stage);
 			
 			// react to actions
 			socket.on('start', function() { 
@@ -36,7 +36,7 @@ module.exports.connect = function(server) {
 						console.error(err);
 					}
 			
-					broadcastStatus(socket);
+					broadcastStage(socket);
 				});
 			});
 			
@@ -46,7 +46,17 @@ module.exports.connect = function(server) {
 						console.error(err);
 					}
 			
-					broadcastStatus(socket);
+					broadcastStage(socket);
+				});
+			});
+			
+			socket.on('shuffle', function() { 
+				standup.shuffle(function(err) {
+					if (err) {
+						console.error(err);
+					}
+			
+					broadcastStage(socket);
 				});
 			});
 			
@@ -56,20 +66,20 @@ module.exports.connect = function(server) {
 						console.error(err);
 					}
 			
-					broadcastStatus(socket);
+					broadcastStage(socket);
 				});
 			});
 		});
 	});
 }
 
-function broadcastStatus(socket) {
-	db.getStatus(function(err, status) {
+function broadcastStage(socket) {
+	db.getStage(function(err, stage) {
 		if (err) {
 			console.error(err);
 		} else {
-			socket.emit('status', status);
-			socket.broadcast.emit('status', status);
+			socket.emit('stage', stage);
+			socket.broadcast.emit('stage', stage);
 		}
 	});
 }

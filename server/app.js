@@ -9,6 +9,7 @@ var express = require('express');
 var routes = require('./routes');
 var db = require('./db');
 var io = require('./io');
+var standup = require('./standup');
 
 // all environments
 var app = express();
@@ -28,19 +29,21 @@ app.get('/', routes.index);
 db.startup(function(error, created) {
 	if (error) {
 		console.error('error: ' + error.toString());
-	} else if (created) {
-		console.log('info: Created a new database file');
-	} else {
-		console.log('info: Connected to existing database file');
 	}
 
-	var server = http.createServer(app);
-	
-	// socket.io
-	io.connect(server);
-	
-	// listen
-	server.listen(app.get('port'), function() {
-		console.log('info: Express server listening on port ' + app.get('port'));
+	// initial data
+	standup.init(function(error) {
+		if (error) {
+			console.error('error: ' + error.toString());
+		}
+		
+		// server & socket.io
+		var server = http.createServer(app);
+		io.connect(server);
+		
+		// listen
+		server.listen(app.get('port'), function() {
+			console.log('info: Express server listening on port ' + app.get('port'));
+		});
 	});
 });
