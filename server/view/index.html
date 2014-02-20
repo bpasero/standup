@@ -68,6 +68,16 @@
         
         // Date
         $('#navdate').html(formatDate(new Date()));
+        
+        // Music
+        $('#music').on('click', function() {
+          var audio = document.getElementsByTagName("audio")[0];
+          if (audio && audio.paused) {
+            audio.play();
+          } else {
+            audio.pause();
+          }
+        });
       });
 		</script>
 	</head>
@@ -116,6 +126,9 @@
             <div class="btn-group">
               <button type="button" class="btn btn-primary" id="stop"><span class="glyphicon glyphicon-stop"></span></button>
             </div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary" id="music"><span class="glyphicon glyphicon-music"></span></button>
+            </div>
           </div>
         </span>
         <span id="stage"></span>
@@ -136,6 +149,12 @@
         </div>
       </div>
     </div>
+    
+    <!-- Monaco Theme
+    ================================================== -->
+    <audio>
+    	<source src="monaco.mp3"></source>
+    </audio>
       
 	</body>
 
