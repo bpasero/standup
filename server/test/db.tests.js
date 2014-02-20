@@ -4,15 +4,18 @@ var assert = require('assert');
 var fs = require('fs');
 
 var db = require('../db');
+var standup = require('../standup');
 
-describe('DB', function() {
-	describe('#getUsers()', function() {
-		it('should return a default set of users after startup', function(done) {
+describe('Standup', function() {
+	describe('#getStage()', function() {
+		it('should return a default stage after startup', function(done) {
 			db.startup(function() {
-				db.getUsers(function(users) {
-					fs.unlinkSync('test.db');
-					assert.equal(10, users.length);
-					done();
+				standup.init(function() {
+					db.getStage(function(err, stage) {
+						fs.unlinkSync('test.db');
+						assert.ok(stage.order.length > 0);
+						done();
+					});
 				});
 			}, 'test.db');
 		});
