@@ -6,33 +6,21 @@ var path = require('path');
 
 var db = require('./db');
 var utils = require('./utils');
+var config = require('../config');
 
 module.exports.init = function(callback) {
-	db.getStage(function(err, stage) {
-		if (err) {
-			return callback(err);
-		}
-		
-		if (stage) {
-			return callback(null);
-		}
-		
-		var users = getUsers(function(err, users) {
-			if (err) {
-				return callback(err);
-			}
-			
-			var order = utils.shuffleArray(utils.clone(users));
-			
-			// Boss is always last
-			order.push({
-				name: 'Erich Team Lead'	
-			});
-			
-			return db.setStage(-1, order, callback);
-		});
+	var users = config.users;
+	var order = utils.shuffleArray(utils.clone(users));
+	
+	// Boss is always last
+	order.push({
+		name: 'Erich Team Lead'	
 	});
+	
+	return db.setStage(-1, order, callback);
 }
+
+module.exports.shuffle = module.exports.init;
 
 module.exports.start = function(callback) {
 	db.isRunning(function(err, isRunning) {
@@ -92,32 +80,5 @@ module.exports.stop = function(callback) {
 		}
 		
 		return db.setStage(-1, stage.order, callback);
-	});
-}
-
-module.exports.shuffle = function(callback) {
-	var users = getUsers(function(err, users) {
-		if (err) {
-			return callback(err);
-		}
-		
-		var order = utils.shuffleArray(utils.clone(users));
-		
-		// Boss is always last
-		order.push({
-			name: 'Erich Team Lead'	
-		});
-		
-		return db.setStage(-1, order, callback);
-	});
-}
-
-function getUsers(callback) {
-	fs.readFile(path.join(__dirname, '..', 'config.json'), function(err, buffer) {
-		if (err) {
-			return callback(err);
-		}
-		
-		return callback(null, JSON.parse(buffer).users);
 	});
 }
