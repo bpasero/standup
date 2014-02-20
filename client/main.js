@@ -69,9 +69,11 @@ define([
 					className = 'warning';
 				}
 				
-				return [
-					format('<span class="list-group-item list-group-item-{0}" style="border-top-left-radius: 0; border-top-right-radius: 0;"><h3>{1}</h3></span>', className, actor.name)
-				].join('\n');
+				if (actor.name.toLowerCase() === 'redmond') {
+					return format('<span class="list-group-item list-group-item-{0}" style="border-top-left-radius: 0; border-top-right-radius: 0;"><h3><a href="{1}">{2}</a></h3></span>', className, 'onenote:http://devdiv/sites/monaco/Docs/Team%20Notebook/Zollikon/Standups%20(Redmond).one#section-id={9497D85E-923C-40F5-8178-DAB487CEC321}&end', actor.name);
+				}
+				
+				return format('<span class="list-group-item list-group-item-{0}" style="border-top-left-radius: 0; border-top-right-radius: 0;"><h3>{1}</h3></span>', className, actor.name);
 			}
 			
 			return '<span class="list-group-item" style="border-top-left-radius: 0; border-top-right-radius: 0;"><h5>' + actor.name + '</h5></span>'
