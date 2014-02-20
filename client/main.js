@@ -11,7 +11,6 @@ define([
 	
 	socket.on('sync', function(time) {
 		serverTimeOffset = new Date().getTime() - time;
-		console.log(serverTimeOffset);
 	});
 	
 	socket.on('status', function(status) {
@@ -24,6 +23,24 @@ define([
 	}, 1000);
 	
 	function render(stage) {
+		
+		// Buttons
+		if (stage) {
+			$('#start').addClass('disabled');
+			$('#stop').removeClass('disabled');
+			
+			if (stage.current + 1 < stage.order.length) {
+				$('#next').removeClass('disabled');
+			} else {
+				$('#next').addClass('disabled');
+			}
+		} else {
+			$('#start').removeClass('disabled');
+			$('#next').addClass('disabled');
+			$('#stop').addClass('disabled');
+		}
+		
+		// Stage
 		if (stage) {
 			var stageList = ['<div class="list-group">'];
 			stageList = stageList.concat(stage.order.map(function(actor, index) {
