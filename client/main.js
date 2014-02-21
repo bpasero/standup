@@ -59,6 +59,7 @@ define([
 				var actorStart = actor.time;
 				var diff = Math.max(0, Math.floor((new Date().getTime() - actorStart - serverTimeOffset) / 1000));
 				var max = 60 * 3; // 3 minutes
+				var color = '#ffffff';
 				
 				var className = '-success';
 				if (diff > 150) {
@@ -69,9 +70,10 @@ define([
 				
 				if (diff > max && diff%2 === 0) {
 					className = '';
+					color = '#000000';
 				}
 				
-				return format('<span class="list-group-item list-group-item{0}"><h3><a style="color: #ffffff;" href="{1}">{2}</a></h3></span>', className, actor.name.toLowerCase() === 'redmond' ? redmondStatus : zurichStatus, actor.name);
+				return format('<span class="list-group-item list-group-item{0}"><h3><a style="color: {1};" href="{2}">{3}</a></h3></span>', className, color, actor.name.toLowerCase() === 'redmond' ? redmondStatus : zurichStatus, actor.name);
 			}
 			
 			return '<span class="list-group-item list-group-item-transparent">' + actor.name + '</span>'
