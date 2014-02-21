@@ -1,7 +1,7 @@
 
 'use strict';
 
-// To change the list of users, simply comment out or add users and F5 https://stand.azurewebsites.net/
+// To change the list of users, simply comment out or add users and F5 https://stand-red.azurewebsites.net/
 
 module.exports.users = [
 	{ "name": "Sofiaaan" },

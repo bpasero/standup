@@ -39,9 +39,9 @@ module.exports.shuffle = function(callback) {
 	var order = utils.shuffleArray(utils.clone(users));
 	
 	// Boss is always last
-	order.push({
-		name: 'Erich Team Lead'	
-	});
+//	order.push({
+//		name: 'Erich Team Lead'	
+//	});
 	
 	return db.setStage(-1, order, callback);
 };
