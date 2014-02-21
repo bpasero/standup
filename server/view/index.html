@@ -68,6 +68,20 @@
         
         // Date
         $('#navdate').html(formatDate(new Date()));
+        
+        // Background Image
+        $.ajax({
+          url: "/image",
+        }).done(function(data) {
+          if (data && data.url) {
+            var url = data.url;
+            $(document.body).css({
+              backgroundImage: 'url(' + url + ')',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: '100%'
+            });
+          }
+        });
       });
 		</script>
 	</head>
@@ -75,7 +89,7 @@
 		
     <!-- Navbar
     ================================================== -->
-		<nav class="navbar navbar-default" role="navigation">
+		<nav class="navbar navbar-default" style="border-radius: 0;" role="navigation">
 		  <div class="container-fluid">
 		    
         <!-- Brand and toggle get grouped for better mobile display -->

@@ -3,6 +3,6 @@
 
 var path = require('path');
 
-exports.index = function(req, res) {
+exports.route = function(req, res) {
   res.sendfile(path.join(__dirname, '..', 'view', 'index.html'));
 };

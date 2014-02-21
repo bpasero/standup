@@ -6,7 +6,8 @@ var path = require('path');
 
 var express = require('express');
 
-var routes = require('./routes');
+var index = require('./routes/index');
+var image = require('./routes/image');
 var db = require('./db');
 var io = require('./io');
 var standup = require('./standup');
@@ -23,7 +24,8 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, '..', 'client')));
 
 // routes
-app.get('/', routes.index);
+app.get('/', index.route);
+app.get('/image', image.route);
 
 // db
 db.startup(function(error, created) {
