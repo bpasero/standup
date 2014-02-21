@@ -71,10 +71,10 @@ define([
 					className = '';
 				}
 				
-				return format('<span class="list-group-item list-group-item{0}" style="border-top-left-radius: 0; border-top-right-radius: 0;"><h2><a style="color: #ffffff;" href="{1}">{2}</a></h2></span>', className, actor.name.toLowerCase() === 'redmond' ? redmondStatus : zurichStatus, actor.name);
+				return format('<span class="list-group-item list-group-item{0}" style="border-top-left-radius: 0; border-top-right-radius: 0;"><h3><a style="color: #ffffff;" href="{1}">{2}</a></h3></span>', className, actor.name.toLowerCase() === 'redmond' ? redmondStatus : zurichStatus, actor.name);
 			}
 			
-			return '<span class="list-group-item" style="border-top-left-radius: 0; border-top-right-radius: 0;"><h4>' + actor.name + '</h4></span>'
+			return '<span class="list-group-item" style="border-top-left-radius: 0; border-top-right-radius: 0;">' + actor.name + '</span>'
 		}));
 
 		$('#stage').empty();
