@@ -1021,3 +1021,14 @@ Wed Feb 19 2014 15:21:58 GMT+0000 (Coordinated Universal Time): Unaught exceptio
     at broadcastStatus (D:\home\site\wwwroot\server\io.js:69:27)
     at D:\home\site\wwwroot\server\io.js:36:6
     at Object.oncomplete (fs.js:107:15)
+Fri Feb 21 2014 10:44:20 GMT+0000 (Coordinated Universal Time): Unaught exception: SyntaxError: Unexpected identifier
+    at Module._compile (module.js:439:25)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (D:\home\site\wwwroot\server\standup.js:9:14)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
