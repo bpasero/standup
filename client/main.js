@@ -60,14 +60,18 @@ define([
 				var diff = Math.max(0, Math.floor((new Date().getTime() - actorStart - serverTimeOffset) / 1000));
 				var max = 60 * 3; // 3 minutes
 				
-				var className = 'success';
+				var className = '-success';
 				if (diff > 150) {
-					className = 'danger';
+					className = '-danger';
 				} else if (diff > 120) {
-					className = 'warning';
+					className = '-warning';
 				}
 				
-				return format('<span class="list-group-item list-group-item-{0}" style="border-top-left-radius: 0; border-top-right-radius: 0;"><h2><a href="{1}">{2}</a></h2></span>', className, actor.name.toLowerCase() === 'redmond' ? redmondStatus : zurichStatus, actor.name);
+				if (diff > max && diff%2 === 0) {
+					className = '';
+				}
+				
+				return format('<span class="list-group-item list-group-item{0}" style="border-top-left-radius: 0; border-top-right-radius: 0;"><h2><a href="{1}">{2}</a></h2></span>', className, actor.name.toLowerCase() === 'redmond' ? redmondStatus : zurichStatus, actor.name);
 			}
 			
 			return '<span class="list-group-item" style="border-top-left-radius: 0; border-top-right-radius: 0;"><h4>' + actor.name + '</h4></span>'
