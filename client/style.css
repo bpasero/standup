@@ -12,3 +12,7 @@
 .list-group-item-danger {
 	background-color: #a94442;
 }
+
+.list-group-item {
+	border: 0;
+}
