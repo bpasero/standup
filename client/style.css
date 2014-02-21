@@ -15,8 +15,28 @@
 
 .list-group-item {
 	border: 0;
+	margin-bottom: 0;
+}
+
+.list-group-item-transparent {
+	background-color: rgba(255, 255, 255, .93);
+}
+
+.list-group-item:first-child {
+	border-top-left-radius: 0; 
+	border-top-right-radius: 0;
 }
 
 .navbar {
 	margin-bottom: 10px;
+	border-radius: 0; 
+	background-color: rgba(255, 255, 255, .93);
+}
+
+.navbar-default {
+	border: 0;
+}
+
+.modal {
+	overflow: hidden;
 }
