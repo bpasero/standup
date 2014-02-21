@@ -71,7 +71,7 @@ define([
 					className = '';
 				}
 				
-				return format('<span class="list-group-item list-group-item{0}"><h3><a style="color: #ffffff;" href="{1}">{2}</a></h3></span>', className, actor.name.toLowerCase() === 'redmond' ? redmondStatus : zurichStatus, actor.name);
+				return format('<span class="list-group-item list-group-item{0}"><h3><a style="color: #ffffff;" href="{1}">{2}</a></h3></span>', className, actor.name.toLowerCase() === 'zurich' ? zurichStatus : redmondStatus, actor.name);
 			}
 			
 			return '<span class="list-group-item list-group-item-transparent">' + actor.name + '</span>'
