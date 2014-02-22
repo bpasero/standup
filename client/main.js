@@ -7,21 +7,18 @@ define([
 	
 	var socket = io.connect();
 	var stage; 
+	var stats = {};
 	var serverTimeOffset = 0;
 	
 	var redmondStatus = 'onenote:http://devdiv/sites/monaco/Docs/Team%20Notebook/Zollikon/Standups%20(Redmond).one#section-id={9497D85E-923C-40F5-8178-DAB487CEC321}&end';
 	var zurichStatus = 'onenote:http://devdiv/sites/monaco/Docs/Team%20Notebook/Zollikon/Standups%20(Zurich).one#section-id={89C56F44-3816-41D5-A5C2-7A997F3540B7}&end';
 	
-	socket.on('sync', function(time) {
-		serverTimeOffset = new Date().getTime() - time;
-	});
-	
-	socket.on('music', function() {
-		toggleAudio();
-	});
-	
-	socket.on('stage', function(s) {
-		stage = s;
+	// sync from server to client
+	socket.on('sync', function(s) {
+		stage = s.stage;
+		stats = s.stats;
+		serverTimeOffset = new Date().getTime() - s.time;
+		
 		render(stage);
 	});
 	
@@ -73,7 +70,17 @@ define([
 					color = '#000000';
 				}
 				
-				return format('<span class="list-group-item list-group-item{0}"><h3><a style="color: {1};" href="{2}">{3}</a></h3></span>', className, color, actor.name.toLowerCase() === 'redmond' ? redmondStatus : zurichStatus, actor.name);
+				var average = '?';
+				if (stats[actor.name]) {
+					var actorStats = stats[actor.name];
+					var standupCount = actorStats.standupCount;
+					var speakTime = actorStats.speakTime;
+					if (standupCount) {
+						average = Math.floor(speakTime / standupCount / 1000 / 60);
+					}
+				}
+				
+				return format('<span class="list-group-item list-group-item{0}"><span class="badge" style="font-size: medium;">&Oslash; {1}m</span><h3><a style="color: {2};" href="{3}">{4}</a></h3></span>', className, average, color, actor.name.toLowerCase() === 'redmond' ? redmondStatus : zurichStatus, actor.name);
 			}
 			
 			return '<span class="list-group-item list-group-item-transparent">' + actor.name + '</span>'
@@ -101,7 +108,6 @@ define([
 	});
 	
 	$('#music').on('click', function() {
-		socket.emit('music');
 		toggleAudio();
 	});
 	
