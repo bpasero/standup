@@ -94,10 +94,10 @@ module.exports.next = function(callback) {
 			
 			if (stage && stage.current + 1 < stage.order.length) {
 				
-				// Statistics (only if speaker did not get skipped by checking for 5 seconds talk time)
+				// Statistics (only if speaker did not get skipped by checking for 3 seconds talk time)
 				var current = stage.order[stage.current];
 				var talked = new Date().getTime() - current.time;
-				if (talked > 5000) {
+				if (talked > 3000) {
 					return db.addStatistics(current, talked, function(err) {
 						if (err) {
 							return callback(err);
@@ -124,10 +124,10 @@ module.exports.stop = function(callback) {
 			return callback(err);
 		}
 		
-		// Statistics (only if speaker did not get skipped by checking for 5 seconds talk time)
+		// Statistics (only if speaker did not get skipped by checking for 3 seconds talk time)
 		var current = stage.order[stage.current];
 		var talked = new Date().getTime() - current.time;
-		if (talked > 5000) {
+		if (talked > 3000) {
 			db.addStatistics(current, talked, function(err) {
 				if (err) {
 					return callback(err);
