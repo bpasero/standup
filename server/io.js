@@ -18,72 +18,71 @@ module.exports.connect = function(server) {
 	// new client connecting
 	io.sockets.on('connection', function(socket) {
 		
-		// sync time
-		socket.emit('sync', new Date().getTime());
+		// sync
+		sync(socket);
 		
-		// send status
-		db.getStage(function(err, stage) {
-			if (err) {
-				console.error(err);
-			}
-			
-			socket.emit('stage', stage);
-			
-			// react to actions
-			socket.on('start', function() { 
-				standup.start(function(err) {
-					if (err) {
-						console.error(err);
-					}
-			
-					broadcastStage(socket);
-				});
+		// react to actions
+		socket.on('start', function() { 
+			standup.start(function(err) {
+				if (err) {
+					console.error(err);
+				}
+		
+				sync(socket);
 			});
-			
-			socket.on('next', function() { 
-				standup.next(function(err) {
-					if (err) {
-						console.error(err);
-					}
-			
-					broadcastStage(socket);
-				});
+		});
+		
+		socket.on('next', function() { 
+			standup.next(function(err) {
+				if (err) {
+					console.error(err);
+				}
+		
+				sync(socket);
 			});
-			
-			socket.on('shuffle', function() { 
-				standup.shuffle(function(err) {
-					if (err) {
-						console.error(err);
-					}
-			
-					broadcastStage(socket);
-				});
+		});
+		
+		socket.on('shuffle', function() { 
+			standup.shuffle(function(err) {
+				if (err) {
+					console.error(err);
+				}
+		
+				sync(socket);
 			});
-			
-			socket.on('stop', function() { 
-				standup.stop(function(err) {
-					if (err) {
-						console.error(err);
-					}
-			
-					broadcastStage(socket);
-				});
-			});
-			
-			socket.on('music', function() { 
-				socket.broadcast.emit('music', true);
+		});
+		
+		socket.on('stop', function() { 
+			standup.stop(function(err) {
+				if (err) {
+					console.error(err);
+				}
+		
+				sync(socket);
 			});
 		});
 	});
 }
 
-function broadcastStage(socket) {
+function sync(socket) {
 	db.getStage(function(err, stage) {
 		if (err) {
 			console.error(err);
-		} else {
-			socket.emit('stage', stage);
-			socket.broadcast.emit('stage', stage);
 		}
+		
+		db.getStatistics(function(err, stats) {
+			if (err) {
+				console.error(err);
+			}
+			
+			var obj = {
+				stage: stage,
+				stats: stats,
+				time: new Date().getTime()
+			}
+			
+			socket.emit('sync', obj);
+			socket.broadcast.emit('sync', obj);
+		});
 	});
 }

@@ -70,6 +70,14 @@ module.exports.start = function(callback) {
 }
 
 module.exports.next = function(callback) {
+	function gotoNext(stage, c) {
+		var next = stage.current + 1;
+		var presenter = stage.order[next];
+		presenter.time = new Date().getTime();
+	
+		return db.setStage(next, stage.order, c);
+	}
+				
 	db.isRunning(function(err, isRunning) {
 		if (err) {
 			return callback(err);
@@ -85,11 +93,24 @@ module.exports.next = function(callback) {
 			}
 			
 			if (stage && stage.current + 1 < stage.order.length) {
-				var next = stage.current + 1;
-				var presenter = stage.order[next];
-				presenter.time = new Date().getTime();
-			
-				return db.setStage(next, stage.order, callback);
+				
+				// Statistics (only if speaker did not get skipped by checking for 3 seconds talk time)
+				var current = stage.order[stage.current];
+				var talked = new Date().getTime() - current.time;
+				if (talked > 3000) {
+					return db.addStatistics(current, talked, function(err) {
+						if (err) {
+							return callback(err);
+						}
+						
+						// Next
+						return gotoNext(stage, callback);
+					});
+				} else {
+					
+					// Next
+					return gotoNext(stage, callback);
+				}
 			}
 			
 			return callback(new Error("Already at the end"));
@@ -103,6 +124,22 @@ module.exports.stop = function(callback) {
 			return callback(err);
 		}
 		
-		return db.setStage(-1, stage.order, callback);
+		// Statistics (only if speaker did not get skipped by checking for 3 seconds talk time)
+		var current = stage.order[stage.current];
+		var talked = new Date().getTime() - current.time;
+		if (talked > 3000) {
+			db.addStatistics(current, talked, function(err) {
+				if (err) {
+					return callback(err);
+				}
+				
+				// Stop
+				return db.setStage(-1, stage.order, callback);
+			});
+		} else {
+			
+			// Stop
+			return db.setStage(-1, stage.order, callback);
+		}
 	});
 }

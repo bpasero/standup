@@ -137,3 +137,35 @@ module.exports.reinit = function(callback) {
 		}, callback);
 	});
 }
+
+module.exports.addStatistics = function(user, time, callback) {
+	db.get('stats', function(err, stats) {
+		if (err) {
+			return callback(err);
+		}
+		
+		stats = stats || {};
+		
+		var standupCount;
+		var speakTime;
+		
+		if (stats[user.name]) {
+			standupCount = stats[user.name].standupCount + 1;
+			speakTime = stats[user.name].speakTime + time;
+		} else {
+			standupCount = 1;
+			speakTime = time;
+		}
+		
+		stats[user.name] = {
+			standupCount: standupCount,
+			speakTime: speakTime
+		};
+		
+		db.set('stats', stats, callback);
+	});
+}
+
+module.exports.getStatistics = function(callback) {
+	db.get('stats', callback);
+}
