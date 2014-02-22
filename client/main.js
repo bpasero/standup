@@ -76,16 +76,11 @@ define([
 					var standupCount = actorStats.standupCount;
 					var speakTime = actorStats.speakTime;
 					if (standupCount) {
-						var res = speakTime / standupCount / 1000;
-						if (res > 60) {
-							average = Math.floor(res / 60) + 'min';
-						} else {
-							average = Math.floor(res) + 'sec';
-						}
+						average = toHHMMSS(speakTime / standupCount / 1000);
 					}
 				}
 				
-				return format('<span class="list-group-item list-group-item{0}"><span class="badge" style="font-size: medium;">&Oslash; {1}</span><h3><a style="color: {2};" href="{3}">{4}</a></h3></span>', className, average, color, actor.name.toLowerCase() === 'zurich' ? zurichStatus : redmondStatus, actor.name);
+				return format('<span class="list-group-item list-group-item{0}"><span class="badge" style="font-size: larger;">&Oslash; {1}</span><h3><a style="color: {2};" href="{3}">{4}</a></h3></span>', className, average, color, actor.name.toLowerCase() === 'zurich' ? zurichStatus : redmondStatus, actor.name);
 			}
 			
 			return '<span class="list-group-item list-group-item-transparent">' + actor.name + '</span>'
@@ -142,5 +137,19 @@ define([
 		} else {
 			audio.pause();
 		}
+	}
+	
+	function toHHMMSS(t) {
+	    var sec_num = parseInt(t, 10); // don't forget the second param
+	    var hours   = Math.floor(sec_num / 3600);
+	    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+	    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+	
+	    if (hours   < 10) {hours   = "0"+hours;}
+	    if (minutes < 10) {minutes = "0"+minutes;}
+	    if (seconds < 10) {seconds = "0"+seconds;}
+	    var time    = hours+':'+minutes+':'+seconds;
+		
+	    return time;
 	}
 });
