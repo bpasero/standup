@@ -52,6 +52,8 @@ define([
 		// Stage
 		var stageList = [];
 		stageList = stageList.concat(stage.order.map(function(actor, index) {
+			
+			// Active Speaker
 			if (index === stage.current) {
 				var actorStart = actor.time;
 				var diff = Math.max(0, Math.floor((new Date().getTime() - actorStart - serverTimeOffset) / 1000));
@@ -86,9 +88,28 @@ define([
 					}
 				}
 				
-				return format('<span class="list-group-item list-group-item{0}"><span class="badge" style="font-size: larger;">&Oslash; {1}</span><h3><a style="color: {2};" href="{3}">{4}</a></h3></span>', className, average, color, actor.name.toLowerCase() === 'redmond' ? redmondStatus : zurichStatus, actor.name);
+				return [
+					'<span class="list-group-item list-group-item' + className + '">',
+					'<span class="label label-default" style="font-size: medium; float: right;">' + toHHMMSS(diff) + ' (&Oslash; ' + average + ')</span>',
+					format('<h3><a style="color: {0};" href="{1}">{2}</a></h3>', color, actor.name.toLowerCase() === 'redmond' ? redmondStatus : zurichStatus, actor.name),
+					'</span>'
+				].join('\n');
 			}
 			
+			// Previous speaker
+			else if (stage.current >= 0 && index < stage.current) {
+				var spoken = Math.floor((stage.order[index+1].time - actor.time) / 1000);
+				var className = '-success';
+				if (spoken > 150) {
+					className = '-danger';
+				} else if (spoken > 120) {
+					className = '-warning';
+				}
+				
+				return format('<span class="list-group-item list-group-item-transparent"><span class="label label{0}" style="font-size: small; float: right;">{1}</span>{2}</span>', className, toHHMMSS(spoken), actor.name);
+			}
+			
+			// Future speaker
 			return '<span class="list-group-item list-group-item-transparent">' + actor.name + '</span>'
 		}));
 
