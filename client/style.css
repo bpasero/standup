@@ -2,15 +2,15 @@
 -------------------------------------------------- */
 
 .list-group-item-success {
-	background-color: #3c763d;
+	background-color: #5cb85c;
 }
 
 .list-group-item-warning {
-	background-color: #D6BC00;
+	background-color: #f0ad4e;
 }
 
 .list-group-item-danger {
-	background-color: #a94442;
+	background-color: #d9534f;
 }
 
 .list-group-item {
