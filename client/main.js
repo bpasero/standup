@@ -70,6 +70,12 @@ define([
 					color = '#000000';
 				}
 				
+				// Team Lead does not get any restrictions :)
+				if (actor.name.indexOf('Team Lead') >= 0) {
+					className = '-success';
+					color = '#ffffff'
+				}
+				
 				var average = '?';
 				if (stats && stats[actor.name]) {
 					var actorStats = stats[actor.name];
