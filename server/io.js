@@ -6,7 +6,7 @@ var socketio = require('socket.io');
 var db = require('./db');
 var standup = require('./standup');
 
-module.exports.connect = function(server) {
+exports.connect = function(server) {
 	
 	// socket.io config
 	var io = socketio.listen(server);

@@ -54,7 +54,7 @@ function createDb(path, callback) {
 }
 
 // DB Startup routine
-module.exports.startup = function(callback, dblocation) {
+exports.startup = function(callback, dblocation) {
 	dblocation = dblocation || DEFAULT_DB_LOCATION;
 	createDb(dblocation, function(err, jsonDb, dbCreated) {
 		if (err) {
@@ -68,12 +68,12 @@ module.exports.startup = function(callback, dblocation) {
 };
 
 // Get stage
-module.exports.getStage = function(callback) {
+exports.getStage = function(callback) {
 	return db.get('stage', callback);
 };
 
 // Set stage
-module.exports.setStage = function(current, order, callback) {
+exports.setStage = function(current, order, callback) {
 	return db.set('stage', {
 		current: current,
 		order: order
@@ -81,19 +81,19 @@ module.exports.setStage = function(current, order, callback) {
 };
 
 // Clear stage
-module.exports.clearStage = function(callback) {
+exports.clearStage = function(callback) {
 	return db.del('stage', callback);
 };
 
 // IsRunning
-module.exports.isRunning = function(callback) {
+exports.isRunning = function(callback) {
 	db.get('stage', function(err, stage) {
 		return callback(err, stage && stage.current >= 0);
 	});
 }
 
 // Needs ReInit
-module.exports.needsReinit = function(callback) {
+exports.needsReinit = function(callback) {
 	db.get('reinit', function(err, reinit) {
 		if (err) {
 			return callback(err);
@@ -125,7 +125,7 @@ module.exports.needsReinit = function(callback) {
 	});
 }
 
-module.exports.reinit = function(callback) {
+exports.reinit = function(callback) {
 	fs.stat(path.join(__dirname, '..', 'config.js'), function(err, stat) {
 		if (err) {
 			return callback(err);
@@ -138,7 +138,7 @@ module.exports.reinit = function(callback) {
 	});
 }
 
-module.exports.addStatistics = function(user, time, callback) {
+exports.addStatistics = function(user, time, callback) {
 	db.get('stats', function(err, stats) {
 		if (err) {
 			return callback(err);
@@ -166,6 +166,6 @@ module.exports.addStatistics = function(user, time, callback) {
 	});
 }
 
-module.exports.getStatistics = function(callback) {
+exports.getStatistics = function(callback) {
 	db.get('stats', callback);
 }

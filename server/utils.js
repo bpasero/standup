@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports.shuffleArray = function(array) {
+exports.shuffleArray = function(array) {
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = array[i];
@@ -11,7 +11,7 @@ module.exports.shuffleArray = function(array) {
     return array;
 }
 
-module.exports.clone = function(obj) {
+exports.clone = function(obj) {
 	if (!obj || typeof obj !== 'object') {
 		return obj;
 	}
@@ -19,7 +19,7 @@ module.exports.clone = function(obj) {
 	var result = (Array.isArray(obj)) ? [] : {};
 	Object.keys(obj).forEach(function(key) {
 		if (obj[key] && typeof obj[key] === 'object') {
-			result[key] = module.exports.shuffleArray(obj[key]);
+			result[key] = exports.shuffleArray(obj[key]);
 		} else {
 			result[key] = obj[key];
 		}

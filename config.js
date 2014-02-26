@@ -3,7 +3,7 @@
 
 // To change the list of users, simply comment out or add users and F5 https://stand.azurewebsites.net/
 
-module.exports.users = [
+exports.users = [
 	{ "name": "Martin" },
 	{ "name": "Isidor" },
 	{ "name": "Joh" },
