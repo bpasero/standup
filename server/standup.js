@@ -8,7 +8,7 @@ var db = require('./db');
 var utils = require('./utils');
 var config = require('../config');
 
-module.exports.init = function(callback) {
+exports.init = function(callback) {
 	db.needsReinit(function(err, needsReinit) {
 		if (err) {
 			return callback(err);
@@ -20,7 +20,7 @@ module.exports.init = function(callback) {
 					return callback(err);
 				}
 				
-				return module.exports.shuffle(function(err) {
+				return exports.shuffle(function(err) {
 					if (err) {
 						return callback(err);
 					}
@@ -34,7 +34,7 @@ module.exports.init = function(callback) {
 	});
 };
 
-module.exports.shuffle = function(callback) {
+exports.shuffle = function(callback) {
 	var users = config.users;
 	var order = utils.shuffleArray(utils.clone(users));
 	
@@ -46,7 +46,7 @@ module.exports.shuffle = function(callback) {
 	return db.setStage(-1, order, callback);
 };
 
-module.exports.start = function(callback) {
+exports.start = function(callback) {
 	db.isRunning(function(err, isRunning) {
 		if (err) {
 			return callback(err);
@@ -69,7 +69,7 @@ module.exports.start = function(callback) {
 	});
 }
 
-module.exports.next = function(callback) {
+exports.next = function(callback) {
 	function gotoNext(stage, c) {
 		var next = stage.current + 1;
 		var presenter = stage.order[next];
@@ -118,7 +118,7 @@ module.exports.next = function(callback) {
 	});
 }
 
-module.exports.stop = function(callback) {
+exports.stop = function(callback) {
 	db.getStage(function(err, stage) {
 		if (err) {
 			return callback(err);
