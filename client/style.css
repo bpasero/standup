@@ -37,6 +37,10 @@
 	border: 0;
 }
 
+.navbar-brand {
+	font-size: 17px;
+}
+
 .modal {
 	overflow: hidden;
 }
