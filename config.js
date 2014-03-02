@@ -11,4 +11,3 @@ exports.users = [
 	{ "name": "Chris5" },
 	{ "name": "Zurich" }
 ];
-
