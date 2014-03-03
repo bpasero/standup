@@ -118,13 +118,13 @@ define([
 					'<span class="list-group-item list-group-item-transparent">',
 					'<span class="label label' + averageClassName + '" style="font-size: small; float: right; margin-left: 5px;">&Oslash; ' + average + '</span>',
 					'<span class="label label' + className + '" style="font-size: small; float: right;">' + toHHMMSS(spoken) + '</span>',
-					actor.name,
+					'<h4>' + actor.name + '</h4>',
 					'</span>'
 				].join('\n');
 			}
 			
 			// Future speaker
-			return '<span class="list-group-item list-group-item-transparent">' + actor.name + '</span>'
+			return '<span class="list-group-item list-group-item-transparent"><h4>' + actor.name + '</h4></span>'
 		}));
 
 		$('#stage').empty();
