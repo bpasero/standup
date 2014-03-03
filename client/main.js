@@ -52,6 +52,24 @@ define([
 		// Stage
 		var stageList = [];
 		stageList = stageList.concat(stage.order.map(function(actor, index) {
+			var average = '?';
+			var averageTime;
+			if (stats && stats[actor.name]) {
+				var actorStats = stats[actor.name];
+				var standupCount = actorStats.standupCount;
+				var speakTime = actorStats.speakTime;
+				if (standupCount) {
+					averageTime = speakTime / standupCount / 1000;
+					average = toHHMMSS(averageTime);
+				}
+			}
+			
+			var averageClassName = '-success';
+			if (averageTime > 150) {
+				averageClassName = '-danger';
+			} else if (averageTime > 120) {
+				averageClassName = '-warning';
+			}
 			
 			// Active Speaker
 			if (index === stage.current) {
@@ -78,16 +96,6 @@ define([
 					color = '#ffffff'
 				}
 				
-				var average = '?';
-				if (stats && stats[actor.name]) {
-					var actorStats = stats[actor.name];
-					var standupCount = actorStats.standupCount;
-					var speakTime = actorStats.speakTime;
-					if (standupCount) {
-						average = toHHMMSS(speakTime / standupCount / 1000);
-					}
-				}
-				
 				return [
 					'<span class="list-group-item list-group-item' + className + '">',
 					'<span class="label label-default" style="font-size: medium; float: right;">' + toHHMMSS(diff) + ' (&Oslash; ' + average + ')</span>',
@@ -106,7 +114,13 @@ define([
 					className = '-warning';
 				}
 				
-				return format('<span class="list-group-item list-group-item-transparent"><span class="label label{0}" style="font-size: small; float: right;">{1}</span>{2}</span>', className, toHHMMSS(spoken), actor.name);
+				return [
+					'<span class="list-group-item list-group-item-transparent">',
+					'<span class="label label' + averageClassName + '" style="font-size: small; float: right; margin-left: 5px;">&Oslash; ' + average + '</span>',
+					'<span class="label label' + className + '" style="font-size: small; float: right;">' + toHHMMSS(spoken) + '</span>',
+					actor.name,
+					'</span>'
+				].join('\n');
 			}
 			
 			// Future speaker
