@@ -75,11 +75,19 @@
         }).done(function(data) {
           if (data && data.url) {
             var url = data.url;
+            var label = data.label;
+            if (label && label.indexOf('(') > 0) {
+              label = label.substr(0, label.indexOf('('));
+            }
+            
             $(document.body).css({
               backgroundImage: 'url(' + url + ')',
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'cover'
             });
+            
+            // Label
+            $('#navlabel').html(label);
           }
         });
       });
@@ -97,7 +105,8 @@
 		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 		        <span class="sr-only">Toggle navigation</span>
 		      </button>
-		      <span class="navbar-brand" href="#" id="navdate"></span>
+		      <span class="navbar-brand" id="navdate"></span>
+		      <span class="navbar-text" id="navlabel"></span>
 		    </div>
 		
 		    <!-- Collect the nav links, forms, and other content for toggling -->
