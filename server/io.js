@@ -32,6 +32,16 @@ exports.connect = function(server) {
 			});
 		});
 		
+		socket.on('previous', function() { 
+			standup.previous(function(err) {
+				if (err) {
+					console.error(err);
+				}
+		
+				sync(socket);
+			});
+		});
+		
 		socket.on('next', function() { 
 			standup.next(function(err) {
 				if (err) {

@@ -42,8 +42,15 @@ define([
 			} else {
 				$('#next').addClass('disabled');
 			}
+			
+			if (stage.current > 0) {
+				$('#previous').removeClass('disabled');
+			} else {
+				$('#previous').addClass('disabled');
+			}
 		} else {
 			$('#start').removeClass('disabled');
+			$('#previous').addClass('disabled');
 			$('#next').addClass('disabled');
 			$('#shuffle').removeClass('disabled');
 			$('#stop').addClass('disabled');
@@ -73,7 +80,7 @@ define([
 			
 			// Active Speaker
 			if (index === stage.current) {
-				var actorStart = actor.time;
+				var actorStart = actor.startTime;
 				var diff = Math.max(0, Math.floor((new Date().getTime() - actorStart - serverTimeOffset) / 1000));
 				var max = 60 * 3; // 3 minutes
 				var color = '#ffffff';
@@ -105,8 +112,8 @@ define([
 			}
 			
 			// Previous speaker
-			else if (stage.current >= 0 && index < stage.current) {
-				var spoken = Math.floor((stage.order[index+1].time - actor.time) / 1000);
+			else if (actor.stopTime) {
+				var spoken = Math.floor((actor.stopTime - actor.startTime) / 1000);
 				var className = '-success';
 				if (spoken > 150) {
 					className = '-danger';
@@ -134,6 +141,10 @@ define([
 	// Actions
 	$('#start').on('click', function() {
 		socket.emit('start');
+	});
+	
+	$('#previous').on('click', function() {
+		socket.emit('previous');
 	});
 	
 	$('#next').on('click', function() {
