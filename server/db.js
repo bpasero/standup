@@ -74,6 +74,14 @@ exports.getStage = function(callback) {
 
 // Set stage
 exports.setStage = function(current, order, callback) {
+	
+	// If stage is reset, make sure to clean up speaker times
+	if (current === -1) {
+		order.forEach(function(element) {
+			delete element.time;
+		});
+	}
+	
 	return db.set('stage', {
 		current: current,
 		order: order
