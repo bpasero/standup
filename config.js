@@ -16,7 +16,6 @@
 exports.users = [
 	{ "name": "Sofiaaan" },
 	{ "name": "ChrisD" },
-	{ "name": "Jeff" },
 	{ "name": "Steven" },
 	{ "name": "Chris5" },
 	{ "name": "Zurich" }
