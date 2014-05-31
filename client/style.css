@@ -1,6 +1,10 @@
 /* GLOBAL STYLES
 -------------------------------------------------- */
 
+body.alerting {
+	background: rgb(244, 35, 35) !important;
+}
+
 .list-group-item-success {
 	background-color: #5cb85c;
 }
