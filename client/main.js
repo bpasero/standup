@@ -97,11 +97,11 @@ define([
 					color = '#000000';
 				}
 				
-				if (diff >= max && diff%2 === 0) {
-					$(window.document.body).addClass("alerting");
-				} else if (diff >= max && diff%2 === 1) {
-					$(window.document.body).removeClass("alerting");
-				}
+//				if (diff >= max && diff%2 === 0) {
+//					$(window.document.body).addClass("alerting");
+//				} else if (diff >= max && diff%2 === 1) {
+//					$(window.document.body).removeClass("alerting");
+//				}
 				
 				// Team Lead does not get any restrictions :)
 				if (actor.name.indexOf('Team Lead') >= 0) {
