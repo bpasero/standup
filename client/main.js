@@ -86,9 +86,9 @@ define([
 				var color = '#ffffff';
 				
 				var className = '-success';
-				if (diff > 150) {
+				if (diff > 180) {
 					className = '-danger';
-				} else if (diff > 120) {
+				} else if (diff > 150) {
 					className = '-warning';
 				}
 				
@@ -115,9 +115,9 @@ define([
 			else if (actor.stopTime) {
 				var spoken = Math.floor((actor.stopTime - actor.startTime) / 1000);
 				var className = '-success';
-				if (spoken > 150) {
+				if (spoken > 180) {
 					className = '-danger';
-				} else if (spoken > 120) {
+				} else if (spoken > 150) {
 					className = '-warning';
 				}
 				
