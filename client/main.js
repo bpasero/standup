@@ -72,9 +72,9 @@ define([
 			}
 			
 			var averageClassName = '-success';
-			if (averageTime > 150) {
+			if (averageTime > 180) {
 				averageClassName = '-danger';
-			} else if (averageTime > 120) {
+			} else if (averageTime > 150) {
 				averageClassName = '-warning';
 			}
 			
