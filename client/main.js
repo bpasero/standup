@@ -9,9 +9,8 @@ define([
 	var stage; 
 	var stats;
 	var serverTimeOffset = 0;
-	
-	var redmondStatus = 'onenote:http://devdiv/sites/monaco/Docs/Team%20Notebook/Zollikon/Standups%20(Redmond).one#section-id={9497D85E-923C-40F5-8178-DAB487CEC321}&end';
-	var zurichStatus = 'onenote:http://devdiv/sites/monaco/Docs/Team%20Notebook/Zollikon/Standups%20(Zurich).one#section-id={89C56F44-3816-41D5-A5C2-7A997F3540B7}&end';
+	var redmondStatus = 'onenote:http://devdiv/sites/monaco/Docs/Team%20Notebook/Zollikon/Sprints.one#section-id={34F93B4D-7830-470D-9469-86BC4C3309F0}&end';
+	var zurichStatus = 'onenote:http://devdiv/sites/monaco/Docs/Team%20Notebook/Zollikon/Sprints.one#section-id={34F93B4D-7830-470D-9469-86BC4C3309F0}&end';
 	
 	// sync from server to client
 	socket.on('sync', function(s) {
