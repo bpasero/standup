@@ -9,8 +9,8 @@ define([
 	var stage; 
 	var stats;
 	var serverTimeOffset = 0;
-	var redmondStatus = 'onenote:http://devdiv/sites/monaco/Docs/Team%20Notebook/Zollikon/Sprints.one#section-id={34F93B4D-7830-470D-9469-86BC4C3309F0}&end';
-	var zurichStatus = 'onenote:http://devdiv/sites/monaco/Docs/Team%20Notebook/Zollikon/Sprints.one#section-id={34F93B4D-7830-470D-9469-86BC4C3309F0}&end';
+	var redmondStatus = 'onenote:https://microsoft.sharepoint.com/teams/DD_OTP/Documents/Ticino/Notebooks/Ticino/Sprints.one#section-id={97CC4DED-1C83-4716-A6D1-C080F036F75D}&end';
+	var zurichStatus = 'onenote:https://microsoft.sharepoint.com/teams/DD_OTP/Documents/Ticino/Notebooks/Ticino/Sprints.one#section-id={97CC4DED-1C83-4716-A6D1-C080F036F75D}&end';
 	
 	// sync from server to client
 	socket.on('sync', function(s) {
