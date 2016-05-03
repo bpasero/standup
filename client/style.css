@@ -27,6 +27,10 @@ body.alerting {
 	color: rgb(20, 20, 20);
 }
 
+.list-group-item-transparent.controls {
+	background-color: rgba(255, 255, 255, .80);
+}
+
 .list-group-item:first-child {
 	border-top-left-radius: 0; 
 	border-top-right-radius: 0;
