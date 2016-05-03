@@ -27,6 +27,11 @@ body.alerting {
 	color: rgb(20, 20, 20);
 }
 
+.list-group-item-transparent.spoken {
+	background-color: rgba(255, 255, 255, .50);
+	color: rgb(70, 70, 70);
+}
+
 .list-group-item-transparent.controls {
 	background-color: rgba(255, 255, 255, .80);
 }

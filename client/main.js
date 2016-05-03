@@ -121,7 +121,7 @@ define([
 				}
 				
 				return [
-					'<span class="list-group-item list-group-item-transparent">',
+					'<span class="list-group-item list-group-item-transparent spoken">',
 					'<span class="label label' + averageClassName + '" style="font-size: small; float: right; margin-left: 5px;">&Oslash; ' + average + '</span>',
 					'<span class="label label' + className + '" style="font-size: small; float: right;">' + toHHMMSS(spoken) + '</span>',
 					'<h4>' + actor.name + '</h4>',
