@@ -20,20 +20,26 @@ body.alerting {
 .list-group-item {
 	border: 0;
 	margin-bottom: 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
+.list-group-item.controls {
+	background-color: rgba(255, 255, 255, .80);
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
 .list-group-item-transparent {
-	background-color: rgba(255, 255, 255, .50);
+	background-color: rgba(255, 255, 255, .60);
 	color: rgb(20, 20, 20);
 }
 
 .list-group-item-transparent.spoken {
-	background-color: rgba(255, 255, 255, .50);
-	color: rgb(70, 70, 70);
-}
-
-.list-group-item-transparent.controls {
-	background-color: rgba(255, 255, 255, .80);
+	color: rgb(80, 80, 80);
 }
 
 .list-group-item:first-child {

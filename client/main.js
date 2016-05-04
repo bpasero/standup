@@ -105,7 +105,7 @@ define([
 				return [
 					'<span class="list-group-item list-group-item' + className + '">',
 					'<span class="label label-default" style="font-size: medium; float: right;">' + toHHMMSS(diff) + ' (&Oslash; ' + average + ')</span>',
-					format('<h3><a style="color: {0};" href="{1}">{2}</a></h3>', color, actor.name.toLowerCase() === 'redmond' ? redmondStatus : zurichStatus, actor.name),
+					format('<h4><a style="color: {0};" href="{1}">{2}</a></h4>', color, actor.name.toLowerCase() === 'redmond' ? redmondStatus : zurichStatus, actor.name),
 					'</span>'
 				].join('\n');
 			}
