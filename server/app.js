@@ -14,7 +14,7 @@ var standup = require('./standup');
 
 // all environments
 var app = express();
-app.set('port', process.env.PORT);
+app.set('port', process.env.PORT || 3000);
 app.use(express.favicon());
 //app.use(express.logger('default'));
 app.use(express.json());
