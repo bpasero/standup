@@ -23,7 +23,6 @@ exports.users = [
 	{ "name": "Alex" },
 	{ "name": "Erich" },
 	{ "name": "Dirk" },
-	{ "name": "Sandeep" },
-	{ "name": "Michel" }
+	{ "name": "Sandeep" }
 	// { "name": "Redmond" }
 ];
