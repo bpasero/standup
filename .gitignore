@@ -1,2 +1,7 @@
+.DS_Store
+npm-debug.log
+Thumbs.db
+node_modules/
+yarn-error.log
 server/db.json
 node_modules
