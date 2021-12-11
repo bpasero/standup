@@ -32,7 +32,7 @@ app.get('/', index.route);
 app.get('/image', image.route);
 
 // db
-db.startup(function(error, created) {
+db.startup(function (error, created) {
 	if (error) {
 		console.error('error: ' + error.toString());
 	} else if (created) {
@@ -42,19 +42,19 @@ db.startup(function(error, created) {
 	}
 
 	// initial data
-	standup.init(function(error, reinit) {
+	standup.init(function (error, reinit) {
 		if (error) {
 			console.error('error: ' + error.toString());
 		} else if (reinit) {
 			console.log('Reshuffled stage');
 		}
-		
+
 		// server & socket.io
 		var server = http.createServer(app);
 		io.connect(server);
-		
+
 		// listen
-		server.listen(app.get('port'), function() {
+		server.listen(app.get('port'), function () {
 			console.log('info: Express server listening on port ' + app.get('port'));
 		});
 	});
