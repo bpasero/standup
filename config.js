@@ -14,15 +14,19 @@
 // - F5 https://stand-red.azurewebsites.net
 
 exports.users = [
-	{ "name": "Martin" },
 	{ "name": "Isidor" },
 	{ "name": "Joh" },
 	{ "name": "André" },
 	{ "name": "João" },
 	{ "name": "Ben" },
-	{ "name": "Alex" },
+	{ "name": "Alex D." },
+	{ "name": "Alex R." },
 	{ "name": "Erich" },
 	{ "name": "Dirk" },
-	{ "name": "Sandeep" }
-	// { "name": "Redmond" }
+	{ "name": "Christof" },
+	{ "name": "Sandeep" },
+	{ "name": "Lad" },
+	{ "name": "Martin" },
+	{ "name": "Henning" },
+	{ "name": "Deepak" },
 ];
