@@ -5,15 +5,15 @@
 
 'use strict';
 
-var socketio = require('socket.io');
+const socketio = require('socket.io');
 
-var db = require('./db');
-var standup = require('./standup');
+const db = require('./db');
+const standup = require('./standup');
 
 exports.connect = function (server) {
 
 	// socket.io config
-	var io = socketio.listen(server);
+	let io = socketio.listen(server);
 	io.configure(function () {
 		io.set('transports', ['xhr-polling']);
 		io.set('log level', 1);
@@ -89,7 +89,7 @@ function sync(socket) {
 				console.error(err);
 			}
 
-			var obj = {
+			let obj = {
 				stage: stage,
 				stats: stats,
 				time: new Date().getTime()

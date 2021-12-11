@@ -5,19 +5,19 @@
 
 'use strict';
 
-var http = require('http');
-var path = require('path');
+const http = require('http');
+const path = require('path');
 
-var express = require('express');
+const express = require('express');
 
-var index = require('./routes/index');
-var image = require('./routes/image');
-var db = require('./db');
-var io = require('./io');
-var standup = require('./standup');
+const index = require('./routes/index');
+const image = require('./routes/image');
+const db = require('./db');
+const io = require('./io');
+const standup = require('./standup');
 
 // all environments
-var app = express();
+let app = express();
 app.set('port', process.env.PORT);
 app.use(express.favicon());
 //app.use(express.logger('default'));
@@ -50,7 +50,7 @@ db.startup(function (error, created) {
 		}
 
 		// server & socket.io
-		var server = http.createServer(app);
+		let server = http.createServer(app);
 		io.connect(server);
 
 		// listen

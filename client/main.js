@@ -10,12 +10,12 @@ define([
 ], function (io) {
 	'use strict';
 
-	var socket = io.connect();
-	var stage;
-	var stats;
-	var serverTimeOffset = 0;
-	var redmondStatus = 'onenote:https://microsoft.sharepoint.com/teams/DD_OTP/Documents/Ticino/Notebooks/Ticino/Sprints.one#section-id={97CC4DED-1C83-4716-A6D1-C080F036F75D}&end';
-	var zurichStatus = 'onenote:https://microsoft.sharepoint.com/teams/DD_OTP/Documents/Ticino/Notebooks/Ticino/Sprints.one#section-id={97CC4DED-1C83-4716-A6D1-C080F036F75D}&end';
+	let socket = io.connect();
+	let stage;
+	let stats;
+	let serverTimeOffset = 0;
+	let redmondStatus = 'onenote:https://microsoft.sharepoint.com/teams/DD_OTP/Documents/Ticino/Notebooks/Ticino/Sprints.one#section-id={97CC4DED-1C83-4716-A6D1-C080F036F75D}&end';
+	let zurichStatus = 'onenote:https://microsoft.sharepoint.com/teams/DD_OTP/Documents/Ticino/Notebooks/Ticino/Sprints.one#section-id={97CC4DED-1C83-4716-A6D1-C080F036F75D}&end';
 
 	// sync from server to client
 	socket.on('sync', function (s) {
@@ -33,7 +33,7 @@ define([
 	}, 1000);
 
 	function render(stage) {
-		var standupRunning = stage && stage.current >= 0;
+		let standupRunning = stage && stage.current >= 0;
 
 		// Buttons
 		if (standupRunning) {
@@ -61,21 +61,21 @@ define([
 		}
 
 		// Stage
-		var stageList = [];
+		let stageList = [];
 		stageList = stageList.concat(stage.order.map(function (actor, index) {
-			var average = '?';
-			var averageTime;
+			let average = '?';
+			let averageTime;
 			if (stats && stats[actor.name]) {
-				var actorStats = stats[actor.name];
-				var standupCount = actorStats.standupCount;
-				var speakTime = actorStats.speakTime;
+				let actorStats = stats[actor.name];
+				let standupCount = actorStats.standupCount;
+				let speakTime = actorStats.speakTime;
 				if (standupCount) {
 					averageTime = speakTime / standupCount / 1000;
 					average = toHHMMSS(averageTime);
 				}
 			}
 
-			var averageClassName = '-success';
+			let averageClassName = '-success';
 			if (averageTime > 180) {
 				averageClassName = '-danger';
 			} else if (averageTime > 150) {
@@ -84,12 +84,12 @@ define([
 
 			// Active Speaker
 			if (index === stage.current) {
-				var actorStart = actor.startTime;
-				var diff = Math.max(0, Math.floor((new Date().getTime() - actorStart - serverTimeOffset) / 1000));
-				var max = 60 * 3; // 3 minutes
-				var color = '#ffffff';
+				let actorStart = actor.startTime;
+				let diff = Math.max(0, Math.floor((new Date().getTime() - actorStart - serverTimeOffset) / 1000));
+				let max = 60 * 3; // 3 minutes
+				let color = '#ffffff';
 
-				var className = '-success';
+				let className = '-success';
 				if (diff > 180) {
 					className = '-danger';
 				} else if (diff > 150) {
@@ -117,8 +117,8 @@ define([
 
 			// Previous speaker
 			else if (actor.stopTime) {
-				var spoken = Math.floor((actor.stopTime - actor.startTime) / 1000);
-				var className = '-success';
+				let spoken = Math.floor((actor.stopTime - actor.startTime) / 1000);
+				let className = '-success';
 				if (spoken > 180) {
 					className = '-danger';
 				} else if (spoken > 150) {
@@ -169,17 +169,17 @@ define([
 
 	// Helper
 	function format(value) {
-		var args = [];
-		for (var _i = 0; _i < (arguments.length - 1); _i++) {
+		let args = [];
+		for (let _i = 0; _i < (arguments.length - 1); _i++) {
 			args[_i] = arguments[_i + 1];
 		}
 		if (args.length === 0) {
 			return value;
 		}
 
-		var str = value;
-		var len = args.length;
-		for (var i = 0; i < len; i++) {
+		let str = value;
+		let len = args.length;
+		for (let i = 0; i < len; i++) {
 			str = str.replace(new RegExp('\\{' + i + '\\}', 'g'), args[i]);
 		}
 
@@ -187,7 +187,7 @@ define([
 	}
 
 	function toggleAudio() {
-		var audio = document.getElementsByTagName("audio")[0];
+		let audio = document.getElementsByTagName("audio")[0];
 		if (audio && audio.paused) {
 			audio.play();
 		} else {
@@ -196,15 +196,15 @@ define([
 	}
 
 	function toHHMMSS(t) {
-		var sec_num = parseInt(t, 10); // don't forget the second param
-		var hours = Math.floor(sec_num / 3600);
-		var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-		var seconds = sec_num - (hours * 3600) - (minutes * 60);
+		let sec_num = parseInt(t, 10); // don't forget the second param
+		let hours = Math.floor(sec_num / 3600);
+		let minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+		let seconds = sec_num - (hours * 3600) - (minutes * 60);
 
 		if (hours < 10) { hours = "0" + hours; }
 		if (minutes < 10) { minutes = "0" + minutes; }
 		if (seconds < 10) { seconds = "0" + seconds; }
-		var time = hours + ':' + minutes + ':' + seconds;
+		let time = hours + ':' + minutes + ':' + seconds;
 
 		return time;
 	}

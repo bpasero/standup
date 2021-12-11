@@ -5,18 +5,18 @@
 
 'use strict';
 
-var http = require('http');
+const http = require('http');
 
 exports.route = function (req, res) {
 
   //The url we want is: 'http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1'
-  var options = {
+  let options = {
     host: 'www.bing.com',
     path: '/HPImageArchive.aspx?format=js&idx=0&n=1'
   };
 
-  var callback = function (response) {
-    var str = '';
+  let callback = function (response) {
+    let str = '';
 
     //another chunk of data has been recieved, so append it to `str`
     response.on('data', function (chunk) {
@@ -26,9 +26,9 @@ exports.route = function (req, res) {
     //the whole response has been recieved, so we just print it out here
     response.on('end', function () {
       try {
-        var data = JSON.parse(str);
-        var url = data.images[0].url;
-        var label = data.images[0].copyright;
+        let data = JSON.parse(str);
+        let url = data.images[0].url;
+        let label = data.images[0].copyright;
 
         res.writeHead(200, { "Content-Type": "application/json" });
         res.end(JSON.stringify({

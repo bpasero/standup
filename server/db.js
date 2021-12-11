@@ -5,11 +5,11 @@
 
 'use strict';
 
-var fs = require('fs');
-var path = require('path');
+const fs = require('fs');
+const path = require('path');
 
-var DEFAULT_DB_LOCATION = 'server/db.json';
-var db;
+let DEFAULT_DB_LOCATION = 'server/db.json';
+let db;
 
 function createDb(path, callback) {
 	function loadDb(clb) {
@@ -116,8 +116,8 @@ exports.needsReinit = function (callback) {
 			return callback(null, true);
 		}
 
-		var configMtime = reinit.configMtime;
-		var lastInitTime = reinit.lastInitTime;
+		let configMtime = reinit.configMtime;
+		let lastInitTime = reinit.lastInitTime;
 
 		fs.stat(path.join(__dirname, '..', 'config.js'), function (err, stat) {
 			if (err) {
@@ -128,7 +128,7 @@ exports.needsReinit = function (callback) {
 				return callback(null, true);
 			}
 
-			var now = new Date();
+			let now = new Date();
 			if (now.getDate() !== new Date(lastInitTime).getDate()) {
 				return callback(null, true);
 			}
@@ -159,8 +159,8 @@ exports.addStatistics = function (user, time, callback) {
 
 		stats = stats || {};
 
-		var standupCount;
-		var speakTime;
+		let standupCount;
+		let speakTime;
 
 		if (stats[user.name]) {
 			standupCount = stats[user.name].standupCount + 1;
