@@ -16,10 +16,9 @@
 exports.users = [
 	{ "name": "Isidor" },
 	{ "name": "Joh" },
-	{ "name": "André" },
+	{ "name": "Alex D." },
 	{ "name": "João" },
 	{ "name": "Ben" },
-	{ "name": "Alex D." },
 	{ "name": "Alex R." },
 	{ "name": "Erich" },
 	{ "name": "Dirk" },
@@ -29,4 +28,7 @@ exports.users = [
 	{ "name": "Martin" },
 	{ "name": "Henning" },
 	{ "name": "Deepak" },
+	{ "name": "Ulugbek" },
+	{ "name": "Aiday" },
+	{ "name": "Hylke" }
 ];

@@ -1,29 +1,46 @@
 /* GLOBAL STYLES
 -------------------------------------------------- */
 
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position-x: 50%;
+}
+
 body.alerting {
 	background: rgb(244, 35, 35) !important;
 }
 
+a,
+a:hover {
+	color: inherit;
+}
+
 .list-group-item-success {
+	color: white;
 	background-color: #5cb85c;
 }
 
 .list-group-item-warning {
+	color: white;
 	background-color: #f0ad4e;
 }
 
 .list-group-item-danger {
+	color: white;
 	background-color: #d9534f;
 }
 
 .list-group-item {
 	border: 0;
 	margin-bottom: 0;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding: 1px 15px;
 }
 
 .list-group-item.controls {
@@ -43,13 +60,13 @@ body.alerting {
 }
 
 .list-group-item:first-child {
-	border-top-left-radius: 0; 
+	border-top-left-radius: 0;
 	border-top-right-radius: 0;
 }
 
 .navbar {
 	margin-bottom: 10px;
-	border-radius: 0; 
+	border-radius: 0;
 	background-color: rgba(255, 255, 255, .95);
 }
 
@@ -63,4 +80,8 @@ body.alerting {
 
 .modal {
 	overflow: hidden;
+}
+
+.hide {
+	display: none;
 }
