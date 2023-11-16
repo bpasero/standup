@@ -1,25 +1,29 @@
 /* GLOBAL STYLES
 -------------------------------------------------- */
 
-html,
+html, 
 body {
 	width: 100%;
 	height: 100%;
 }
 
 body {
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position-x: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: 50%;
 }
 
 body.alerting {
 	background: rgb(244, 35, 35) !important;
 }
 
-a,
+a, 
 a:hover {
 	color: inherit;
+}
+
+.list-group {
+	position: relative;
 }
 
 .list-group-item-success {
@@ -47,8 +51,10 @@ a:hover {
 	background-color: rgba(255, 255, 255, .80);
 	padding-top: 10px;
 	padding-bottom: 10px;
+	position: sticky;
+    top: 0;
+    z-index: 1;
 }
-
 
 .list-group-item-transparent {
 	background-color: rgba(255, 255, 255, .60);
@@ -60,13 +66,19 @@ a:hover {
 }
 
 .list-group-item:first-child {
-	border-top-left-radius: 0;
+	border-top-left-radius: 0; 
 	border-top-right-radius: 0;
+}
+
+#stage {
+	display: block;
+	height: calc(100vh - 140px);
+    overflow-y: auto;
 }
 
 .navbar {
 	margin-bottom: 10px;
-	border-radius: 0;
+	border-radius: 0; 
 	background-color: rgba(255, 255, 255, .95);
 }
 
