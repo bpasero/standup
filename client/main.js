@@ -21,7 +21,7 @@ define([
 
 	setInterval(function () {
 		if (stage) {
-			//			render(stage);
+			render(stage);
 		}
 	}, 1000);
 
@@ -63,17 +63,22 @@ define([
 		}
 
 		function renderSpeaker(index, actor) {
+			var avatar = '';
+
+			if (actor.githubId) {
+				avatar = '<img class="avatar" src="https://avatars.githubusercontent.com/u/' + actor.githubId + '" />';
+			}
 			if (standupRunning && index !== stage.current) {
-				return '<h4><a href="#" onclick="goto(' + index + ')">' + actor.name + '</a></h4>';
+				return '<h4>' + avatar + '<a href="#" onclick="goto(' + index + ')">' + actor.name + '</a></h4>';
 			} else {
 				if (index === stage.current || index === 0) {
-					return '<h4>' + actor.name + '</h4>';
+					return '<h4>' + avatar + actor.name + '</h4>';
 				} else {
 					return [
 						'<span style="float: left; margin-top: 10px; margin-right: 12px;">',
 						'<input class="form-check-input" type="checkbox" value="checked" onclick="toggleDiscussionSlot(' + index + ')"' + (actor.discussionSlot ? ' checked' : '') + '>',
 						'</span>',
-						'<h4>' + actor.name + '</h4>'
+						'<h4>' + avatar + actor.name + '</h4>'
 					].join('\n');
 				}
 			}
@@ -189,6 +194,13 @@ define([
 
 	$('#music').on('click', function () {
 		toggleAudio();
+	});
+
+	$('#confetti').on('click', function () {
+		confetti({
+			particleCount: 400,
+			spread: 180
+		});
 	});
 
 	// Helper
