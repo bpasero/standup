@@ -9,6 +9,6 @@
   "dependencies": {
     "express": "3.4.8",
     "jade": "1.1.5",
-		"socket.io": "0.9.16"
+		"socket.io": "4.8.0"
   }
 }

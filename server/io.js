@@ -9,11 +9,7 @@ var standup = require('./standup');
 exports.connect = function (server) {
 
 	// socket.io config
-	var io = socketio.listen(server);
-	io.configure(function () {
-		io.set('transports', ['xhr-polling']);
-		io.set('log level', 1);
-	});
+	var io = new socketio.Server(server);
 
 	// new client connecting
 	io.sockets.on('connection', function (socket) {
@@ -73,7 +69,6 @@ exports.connect = function (server) {
 		});
 
 		socket.on('goto', function (idx) {
-			console.log('GOTO', idx);
 			standup.goto(idx, function (err) {
 				if (err) {
 					console.error(err);
@@ -84,7 +79,6 @@ exports.connect = function (server) {
 		});
 
 		socket.on('toggleDiscussionSlot', function (idx) {
-			console.log('TOGGLE DISCUSSION SLOT', idx);
 			standup.toggleDiscussionSlot(idx, function (err) {
 				if (err) {
 					console.error(err);
